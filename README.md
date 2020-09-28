@@ -6,9 +6,8 @@ the same phylogenetic trees and GO annotations featured in the aphylo paper.
 
 ## Downloads
 
-The sifter program was downloaded from 
-
-- https://sifter.berkeley.edu/media/sifter2.1.1.tar.gz
+The sifter program was downloaded from the GitHub repository [here](https://github.com/BrennerLab/SIFTER/tree/8274cac492a1c7355c4d92df548d6997dbb6b4b1).
+The entire repository was decompress under `SIFTER-master`.
 
 The data to run SIFTER was downloaded from
 
