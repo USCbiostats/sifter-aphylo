@@ -56,4 +56,16 @@ Although it seems that that library is actually not imported anywhere in the pro
    
    Otherwise, the system returns with an error (source: [here](https://stackoverflow.com/questions/49194719/authentication-plugin-caching-sha2-password-cannot-be-loaded)).
 
+## Running SIFTER
+
+To run sifter, in our case, we had to include the password to the databse. In particular,
+following the example to "run SIFTER on some families":
+
+```
+python sifter_prepare.py --dbpass=[pass] -f PF12491,PF13820 path/to/families_data ../example/queries
+python sifter_run.py ../example/queries ../example/results
+python sifter_extract.py --dbpass=[pass] -f PF12491,PF13820 ../example/results ../examples/preds.txt
+```
+
+This also included creating the `../examples/` path which does not exists by default.
 
