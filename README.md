@@ -69,3 +69,8 @@ python sifter_extract.py --dbpass=[pass] -f PF12491,PF13820 ../example/results .
 
 This also included creating the `../examples/` path which does not exists by default.
 
+The **evidence files** are located in
+
+`SIFTER-master/large_scale_v1.0/data/families_data/annotations/*.pli.gz`
+
+
