@@ -73,4 +73,122 @@ The **evidence files** are located in
 
 `SIFTER-master/large_scale_v1.0/data/families_data/annotations/*.pli.gz`
 
+## Manual
 
+Under the hood, this is what is run
+
+```
+java -jar core/sifter2.1.1.jar
+ERROR: Please specify run name:
+usage: java -jar sifter.jar [OPTIONS] FAMILYNAME
+ -sfx,--scale <filename>                     Set family .fx scale filename
+                                             (default: data/scale-<FAMILY>.fx)
+ -afx,--alpha <filename>                     Set family .fx alpha filename
+                                             (default: data/alpha-<FAMILY>.fx)
+ -fx,--familyfile <filename>                 Set family .fx parameter
+                                             filename (default: data/infer-<FAMILY>.fx)
+ -exp,--with-exp                             (Experiment) Use GOA protein
+                                             annotations inferred from experiment.
+ -floats,--with-floats                       Use floating numbers as
+                                             confidence values.
+ -genemania,--with-genemania                 Use protein predictions from
+                                             genemania.
+ -gene3d,--with-genethreed                   Use gene3d predictions in
+                                             InterPro.
+ -hamap,--with-hamap                         Use hamap predictions in
+                                             InterPro.
+ -iba,--with-iba                             (Computational) Use GOA
+                                             protein annotations from those inferred from biological aspect of
+                                             ancestor.
+ -ibd,--with-ibd                             (Computational) Use GOA
+                                             protein annotations from those inferred from biological aspect of
+                                             descendant.
+ -ic,--with-ic                               (Curator Statement) Use GOA
+                                             protein annotations from those inferred from curator
+ -ida,--with-ida                             (Experiment) Use GOA protein
+                                             annotations inferred from direct assay.
+ -iea,--with-iea                             (Automatically Assigned) Use
+                                             GOA protein annotations inferred by electronic annotation.
+ -iep,--with-iep                             (Experiment) Use GOA protein
+                                             annotations from those inferred from expression profiles.
+ -igc,--with-igc                             (Computational) Use GOA
+                                             protein annotations from those inferred from genomic context.
+ -igi,--with-igi                             (Experiment) Use GOA protein
+                                             annotations from those inferred from genetic interaction.
+ -ikr,--with-ikr                             (Computational) Use GOA
+                                             protein annotations from those inferred from key residues.
+ -imp,--with-imp                             (Experiment) Use GOA protein
+                                             annotations from those inferred from mutant phenotype.
+ -ipi,--with-ipi                             (Experiment) Use GOA protein
+                                             annotations from those inferred from physical interaction.
+ -ird,--with-ird                             (Computational) Use GOA
+                                             protein annotations from those inferred from rapid divergence.
+ -isa,--with-isa                             (Computational) Use GOA
+                                             protein annotations from those inferred from sequence alignment.
+ -ism,--with-ism                             (Computational) Use GOA
+                                             protein annotations from those inferred from sequence model.
+ -iso,--with-iso                             (Computational) Use GOA
+                                             protein annotations from those inferred from sequence orthology.
+ -iss,--with-iss                             (Computational) Use GOA
+                                             protein annotations from those inferred from sequence similarity.
+ -nd,--with-nd                               (Curator Statement) Use GOA
+                                             protein annotations from those inferred from curator with no biological
+                                             data available
+ -nr,--with-nr                               (Obsolete) Use protein
+                                             annotations with source not recorded.
+ -folds,--folds <number>                     Number of folds in cross
+                                             validation, leave-one-out is 0
+ -pagosub,--with-pagosub                     Use protein predictions from
+                                             pagosub.
+ -panther,--with-panther                     Use panther predictions in
+                                             InterPro.
+ -pfam,--with-pfam                           Use Pfam predictions in
+                                             InterPro.
+ -pirsf,--with-pirsf                         Use PIRSF predictions in
+                                             InterPro.
+ -prints,--with-prints                       Use prints predictions in
+                                             InterPro.
+ -prodom,--with-prodom                       Use ProDom predictions in
+                                             InterPro.
+ -prosite_patterns,--with-prosite-profiles   Use PROSITE profile
+                                             predictionss in InterPro.
+ -protfun,--with-protfun                     Use protein predictions from
+                                             ProtFun.
+ -rca,--with-rca                             (Computational) Use GOA
+                                             protein annotations from those reconstructed from computational analyses.
+ -smart,--with-smart                         Use SMART predicitons in
+                                             InterPro.
+ -step,--step <number>                       Step size for gradient ascent
+                                             in EM (M-step)
+ -cutoff,--cutoff <number>                   Cutoff delta for gradient
+                                             ascent in EM (M-step)
+ -superfamily,--with-superfamily             Use SUPERFAMILY predictions
+                                             in InterPro.
+ -tas,--with-tas                             (Author Statement) Use GOA
+                                             protein annotations from traceable author statements.
+ -tigrfams,--with-tigr                       Use TIGRFAMs predictions in
+                                             InterPro.
+ -nas,--with-nas                             (Author Statement) Use GOA
+                                             protein annotations from non-traceable author statements.
+ -xval,--xvalidation                         (Run mode) Use
+                                             cross-validation with EM.
+    --help                                   Show help for arguments.
+                                             (More help is available via README.txt)
+ -em,--em                                    (Run mode) Perform EM to
+                                             estimate parameters
+ -g,--generate                               (Run mode) Generates a set of
+                                             input parameters for the inference problem.
+ -iter,--iter <number>                       Number of iterations. At the
+                                             moment, this applies only to EM.
+ -ontology,--ontology <filename>             Specify which ontology file
+                                             you want (default: "data/function.ontology")
+ -output,--output <filename>                 Set output file (default:
+                                             output_directory/default.rdata)
+ -phylo,--reconciled <filename>              Set reconciled .xml tree
+                                             (default: reconciled/reconciled_<FAMILY>.xml)
+ -pli,--protein <filename>                   Set protein file (default:
+                                             proteins/proteinfamily_<FAMILY>.pli)
+ -truncation,--truncation <number>           Number of functions to
+                                             truncate to in approximation
+ -v,--verbose                                Verbose operation.
+```
