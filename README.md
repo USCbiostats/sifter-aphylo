@@ -32,6 +32,30 @@ sudo yum install libsqlite3x-devel.x86_64
 
 Although it seems that that library is actually not imported anywhere in the program.
 
+-----
+
+The file
+
+gene_association.goa_uniprot.80.txt which is formated in GAF 1.0
+(see http://www-legacy.geneontology.org/GO.format.gaf-1_0.shtml)
+
+Was downloaded from ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/old/UNIPROT/ version 80
+
+The file hundredfamilies was downloaded from supplemental materials of the 2011
+paper published in Genome Research. 
+
+https://genome.cshlp.org/content/21/11/1969/suppl/DC1
+
+https://ndownloader.figstatic.com/files/6649398 (see also https://doi.org/10.1371/journal.pcbi.0010045.sd001)
+From the paper website https://doi.org/10.1371/journal.pcbi.0010045 (Original 2015 paper from plos comp bio)
+
+
+ 
+The nudix family tree was downloaded from PFAM version 20 (as mentioned in the paper)
+ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam20.0/, and in particular, the
+file trees.tar.gz
+
+
 ## Installing the system
 
 1. Install MySQL and make sure there's enough space in your system to load the db.
