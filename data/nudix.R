@@ -12,7 +12,9 @@ ann  <- fread("data-raw/nudix/nudix-ann.tsv")
 
 # Are all the leafs in ann included in tree?
 (not_in <- which(!ann$protein %in% gsub("[/].+", "", tree$tip.label)))
-ann[not_in] # Protein DIPP_ASFB7 with go term 5000000 not present in nudix PFAM 20
+# Protein DIPP_ASFB7 with go term 5000000 not present in nudix PFAM 20
+# https://www.uniprot.org/uniprot/P32092
+ann[not_in]
 
 ann <- ann[-not_in,]
 
