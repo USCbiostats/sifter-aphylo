@@ -1,0 +1,19 @@
+Author: Barbara Engelhardt, April 2010
+Copyright (c) 2010, Barbara Engelhardt
+
+These data include 100 input files to SIFTER for 100 families from
+Pfam release 24.0 and the GOA Uniprot database downloaded in March,
+2010. These only include experimental evidence.
+
+See the script directory in SIFTER 2.0 for the scripts on how to run
+this complete set of proteins in this version of SIFTER (equivalent
+scripts can be built for the previous version).
+
+These data are described in detail in the Supplemental material for
+Engelhardt et al., 2010. If you choose to use these data, please cite
+Engelhardt et al., 2010.
+
+Thank you.
+Barbara Engelhardt
+bee@compbio.berkeley.edu
+

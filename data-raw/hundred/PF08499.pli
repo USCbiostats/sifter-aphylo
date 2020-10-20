@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<Family>
+  <FamilyID>PF08499</FamilyID>
+   <Protein>
+    <ProteinName>Q8NB10_HUMAN</ProteinName>
+    <ProteinNumber>Q8NB10</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q4RH59_TETNG</ProteinName>
+    <ProteinNumber>Q4RH59</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q4RX05_TETNG</ProteinName>
+    <ProteinNumber>Q4RX05</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>A1L1D8_XENTR</ProteinName>
+    <ProteinNumber>A1L1D8</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>PDE1B_BOVIN</ProteinName>
+    <ProteinNumber>PDE1B_BOVIN</ProteinNumber>
+    <GONumber>[0004117, 0048101]</GONumber>
+    <MOC>[IDA, IDA]</MOC>
+   </Protein>
+   <Protein>
+    <ProteinName>Q99MN5_RAT</ProteinName>
+    <ProteinNumber>Q99MN5_RAT</ProteinNumber>
+    <GONumber>[0004112, 0004115, 0004115, 0048101, 0048101]</GONumber>
+    <MOC>[IDA, IDA, IDA, IDA, IDA]</MOC>
+   </Protein>
+   <Protein>
+    <ProteinName>PDE1B_MOUSE</ProteinName>
+    <ProteinNumber>PDE1B</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q4TEP6_TETNG</ProteinName>
+    <ProteinNumber>Q4TEP6</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>A7SGA1_NEMVE</ProteinName>
+    <ProteinNumber>A7SGA1</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>C3YYH5_BRAFL</ProteinName>
+    <ProteinNumber>C3YYH5</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>C3Z0J8_BRAFL</ProteinName>
+    <ProteinNumber>C3Z0J8</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>B7QB12_IXOSC</ProteinName>
+    <ProteinNumber>B7QB12</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>B4LQJ7_DROVI</ProteinName>
+    <ProteinNumber>B4LQJ7</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>O96077_9METZ</ProteinName>
+    <ProteinNumber>O96077</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>PDE4_DICDI</ProteinName>
+    <ProteinNumber>PDE4_DICDI</ProteinNumber>
+    <GONumber>[0004115]</GONumber>
+    <MOC>[IMP]</MOC>
+   </Protein>
+   <Protein>
+    <ProteinName>O96075_9METZ</ProteinName>
+    <ProteinNumber>O96075</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>B5BM35_CAEEL</ProteinName>
+    <ProteinNumber>B5BM35</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>A8QCY4_BRUMA</ProteinName>
+    <ProteinNumber>A8QCY4</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>C4Q3G2_SCHMA</ProteinName>
+    <ProteinNumber>C4Q3G2</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q005X2_STRPU</ProteinName>
+    <ProteinNumber>Q005X2</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q4S9Q7_TETNG</ProteinName>
+    <ProteinNumber>Q4S9Q7</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>PDE1A_BOVIN</ProteinName>
+    <ProteinNumber>PDE1A_BOVIN</ProteinNumber>
+    <GONumber>[0004117, 0048101]</GONumber>
+    <MOC>[IDA, IDA]</MOC>
+   </Protein>
+   <Protein>
+    <ProteinName>Q9EPS1_RAT</ProteinName>
+    <ProteinNumber>Q9EPS1_RAT</ProteinNumber>
+    <GONumber>[0004115, 0030553, 0048101, 0048101, 0048101]</GONumber>
+    <MOC>[IDA, IDA, IDA, IMP, IDA]</MOC>
+   </Protein>
+   <Protein>
+    <ProteinName>A4IIT4_XENTR</ProteinName>
+    <ProteinNumber>A4IIT4</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>A2ASF9_MOUSE</ProteinName>
+    <ProteinNumber>A2ASF9</ProteinNumber>
+   </Protein>
+<\Family>

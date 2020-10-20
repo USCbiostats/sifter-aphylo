@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Family>
+  <FamilyID>PF04988</FamilyID>
+   <Protein>
+    <ProteinName>AKAP8_CANFA</ProteinName>
+    <ProteinNumber>AKAP8</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>B7Z8L8_HUMAN</ProteinName>
+    <ProteinNumber>B7Z8L8</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q5EB69_RAT</ProteinName>
+    <ProteinNumber>Q5EB69_RAT</ProteinNumber>
+    <GONumber>[0003677, 0003690, 0008270, 0034237]</GONumber>
+    <MOC>[IDA, IDA, IDA, IDA]</MOC>
+   </Protein>
+   <Protein>
+    <ProteinName>A2CEZ5_DANRE</ProteinName>
+    <ProteinNumber>A2CEZ5</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>B7ZT04_XENTR</ProteinName>
+    <ProteinNumber>B7ZT04</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>ZN326_CHICK</ProteinName>
+    <ProteinNumber>ZN326</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q3TRI9_MOUSE</ProteinName>
+    <ProteinNumber>Q3TRI9_MOUSE</ProteinNumber>
+    <GONumber>[0003677, 0008270, 0016563]</GONumber>
+    <MOC>[IDA, IDA, IDA]</MOC>
+   </Protein>
+   <Protein>
+    <ProteinName>Q4SSL2_TETNG</ProteinName>
+    <ProteinNumber>Q4SSL2</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q17F58_AEDAE</ProteinName>
+    <ProteinNumber>Q17F58</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q501K7_XENTR</ProteinName>
+    <ProteinNumber>Q501K7</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q08B17_XENLA</ProteinName>
+    <ProteinNumber>Q08B17</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q5FWX4_XENLA</ProteinName>
+    <ProteinNumber>Q5FWX4</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q4T881_TETNG</ProteinName>
+    <ProteinNumber>Q4T881</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>Q6NUT6_DANRE</ProteinName>
+    <ProteinNumber>Q6NUT6</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>B4F6P4_XENTR</ProteinName>
+    <ProteinNumber>B4F6P4</ProteinNumber>
+   </Protein>
+   <Protein>
+    <ProteinName>B4DJ74_HUMAN</ProteinName>
+    <ProteinNumber>B4DJ74</ProteinNumber>
+   </Protein>
+<\Family>
