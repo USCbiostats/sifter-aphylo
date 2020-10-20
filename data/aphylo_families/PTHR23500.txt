@@ -1,0 +1,17 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q8BFW9	49	370	47	381	PF00083.24	Sugar_tr	Family	3	339	452	249.6	5.7e-74	1	CL0015
+Q8BFW9	463	567	451	569	PF00083.24	Sugar_tr	Family	346	450	452	92.6	2.5e-26	1	CL0015
+Q5AYG1	22	494	22	495	PF00083.24	Sugar_tr	Family	1	451	452	422.8	1.6e-126	1	CL0015
+P38695	89	549	89	549	PF00083.24	Sugar_tr	Family	1	452	452	581.0	1.7e-174	1	CL0015
+P32466	65	525	65	525	PF00083.24	Sugar_tr	Family	1	452	452	578.0	1.4e-173	1	CL0015
+P32465	68	528	68	528	PF00083.24	Sugar_tr	Family	1	452	452	574.6	1.5e-172	1	CL0015
+P23585	59	519	59	519	PF00083.24	Sugar_tr	Family	1	452	452	574.2	1.9e-172	1	CL0015
+P39004	68	528	68	528	PF00083.24	Sugar_tr	Family	1	452	452	580.2	2.9e-174	1	CL0015
+Q5B0S0	55	510	53	510	PF00083.24	Sugar_tr	Family	3	452	452	454.4	4.3e-136	1	CL0015
+P78831	11	467	9	467	PF00083.24	Sugar_tr	Family	3	452	452	390.9	7.7e-117	1	CL0015
+Q12300	104	559	102	559	PF00083.24	Sugar_tr	Family	3	452	452	437.6	5.4e-131	1	CL0015
+P10870	102	556	100	556	PF00083.24	Sugar_tr	Family	3	452	452	447.3	5.9e-134	1	CL0015
+Q9JIF3	31	474	29	474	PF00083.24	Sugar_tr	Family	3	452	452	323.9	1.7e-96	1	CL0015

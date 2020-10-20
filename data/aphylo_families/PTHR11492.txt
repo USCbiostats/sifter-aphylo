@@ -1,0 +1,19 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+O70188	10	47	8	47	PF10524.9	NfI_DNAbd_pre-N	Family	4	41	41	89.9	6.6e-26	1	No_clan
+O70188	70	170	69	173	PF03165.16	MH1	Domain	2	100	103	44.8	1.1e-11	1	CL0263
+O70188	217	424	217	428	PF00859.18	CTF_NFI	Family	1	208	293	354.3	7.4e-106	1	No_clan
+Q02780	33	69	31	69	PF10524.9	NfI_DNAbd_pre-N	Family	5	41	41	85.3	1.8e-24	1	No_clan
+Q02780	92	193	91	195	PF03165.16	MH1	Domain	2	101	103	45.9	5.1e-12	1	CL0263
+Q02780	237	531	237	531	PF00859.18	CTF_NFI	Family	1	293	293	429.6	8.4e-129	1	No_clan
+P09414	9	46	7	46	PF10524.9	NfI_DNAbd_pre-N	Family	4	41	41	89.6	8e-26	1	No_clan
+P09414	69	170	68	172	PF03165.16	MH1	Domain	2	101	103	46.0	4.7e-12	1	CL0263
+P09414	214	508	214	508	PF00859.18	CTF_NFI	Family	1	293	293	430.9	3.4e-129	1	No_clan
+O00712	10	47	8	47	PF10524.9	NfI_DNAbd_pre-N	Family	4	41	41	87.7	3.3e-25	1	No_clan
+O00712	70	171	69	173	PF03165.16	MH1	Domain	2	101	103	44.9	1.1e-11	1	CL0263
+O00712	209	415	209	418	PF00859.18	CTF_NFI	Family	1	207	293	285.0	9.7e-85	1	No_clan
+O70185	10	47	8	47	PF10524.9	NfI_DNAbd_pre-N	Family	4	41	41	87.1	4.8e-25	1	No_clan
+O70185	70	171	69	173	PF03165.16	MH1	Domain	2	101	103	44.2	1.7e-11	1	CL0263
+O70185	209	494	209	497	PF00859.18	CTF_NFI	Family	1	290	293	378.2	4e-113	1	No_clan

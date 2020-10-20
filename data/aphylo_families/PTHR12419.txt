@@ -1,0 +1,12 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q7L8S5	147	269	147	269	PF02338.19	OTU	Family	1	127	127	95.6	3e-27	1	CL0125
+Q96G74	220	336	219	338	PF02338.19	OTU	Family	2	123	127	62.3	6e-17	1	CL0125
+Q01804	42	122	40	149	PF02338.19	OTU	Family	3	88	127	56.1	5.2e-15	1	CL0125
+Q9VR20	40	119	35	141	PF02338.19	OTU	Family	6	90	127	31.0	2.9e-07	1	CL0125
+P10383	41	117	37	147	PF02338.19	OTU	Family	7	88	127	23.3	7e-05	1	CL0125
+Q5VV17	316	432	315	433	PF02338.19	OTU	Family	2	127	127	87.3	1.1e-24	1	CL0125
+Q5T2D3	71	165	71	185	PF02338.19	OTU	Family	1	92	127	38.9	1.1e-09	1	CL0125
+Q8N6M0	153	278	153	278	PF02338.19	OTU	Family	1	127	127	112.0	2.6e-32	1	CL0125

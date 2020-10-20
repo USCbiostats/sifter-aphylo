@@ -1,0 +1,22 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9H6E5	16	40	16	40	PF12874.7	zf-met	Domain	1	25	25	21.6	0.00021	1	CL0361
+Q9H6E5	58	118	58	122	PF00076.22	RRM_1	Domain	1	66	70	23.2	4.6e-05	1	CL0221
+Q9H6E5	491	549	490	549	PF03828.19	PAP_assoc	Family	2	62	62	25.4	1.2e-05	1	No_clan
+Q9NVV4	63	132	62	132	PF17797.1	RL	Domain	2	71	71	118.6	8e-35	1	CL0221
+Q9NVV4	440	483	436	484	PF03828.19	PAP_assoc	Family	5	61	62	24.6	2.1e-05	1	No_clan
+Q6PIY7	386	440	386	440	PF03828.19	PAP_assoc	Family	1	62	62	50.9	1.4e-13	1	No_clan
+Q5VYS8	551	600	550	603	PF03828.19	PAP_assoc	Family	2	59	62	38.7	8.5e-10	1	No_clan
+Q5VYS8	964	980	963	980	PF00098.23	zf-CCHC	Domain	2	18	18	16.9	0.0049	1	CL0511
+Q5VYS8	1029	1121	1026	1138	PF01909.23	NTP_transf_2	Family	4	74	95	22.0	0.00015	1	CL0260
+Q5VYS8	1233	1286	1233	1286	PF03828.19	PAP_assoc	Family	1	62	62	53.7	1.8e-14	1	No_clan
+Q5VYS8	1346	1361	1345	1362	PF00098.23	zf-CCHC	Domain	2	17	18	19.1	0.00097	1	CL0511
+Q5VYS8	1363	1450	1363	1450	PF16631.5	TUTF7_u4	Disordered	1	88	88	138.7	7e-41	1	No_clan
+Q5VYS8	1452	1468	1451	1468	PF00098.23	zf-CCHC	Domain	2	18	18	23.7	3.4e-05	1	CL0511
+Q5TAX3	628	678	628	681	PF03828.19	PAP_assoc	Family	1	59	62	42.2	6.9e-11	1	No_clan
+Q5TAX3	981	1061	977	1065	PF01909.23	NTP_transf_2	Family	6	91	95	34.9	1.4e-08	1	CL0260
+Q5TAX3	1184	1237	1184	1237	PF03828.19	PAP_assoc	Family	1	62	62	57.7	1e-15	1	No_clan
+Q5TAX3	1294	1310	1293	1310	PF00098.23	zf-CCHC	Domain	2	18	18	17.1	0.0041	1	CL0511
+Q5TAX3	1358	1374	1357	1374	PF00098.23	zf-CCHC	Domain	2	18	18	20.9	0.00026	1	CL0511

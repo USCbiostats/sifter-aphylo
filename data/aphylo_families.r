@@ -3,7 +3,7 @@ library(data.table)
 library(pfamscanr)
 
 # Loading the trees for the experiment
-candidate_trees <- readRDS("data/candidate_trees.rds")
+candidate_trees <- readRDS("data-raw/candidate_trees.rds")
 
 # Extracting database with annotations per tree
 dat <- lapply(candidate_trees, function(tree) {
@@ -22,62 +22,7 @@ dat <- Map(
 
 dat <- rbindlist(dat)
 
-# Obtaining the Pfam name ------------------------------------------------------
-# https://www.uniprot.org/help/api_retrieve_entries
-get_info_uniprot <- function(uniprotkb, skip_failed = TRUE, db = "pfam") {
-  
-  # Can be applied to multiple data
-  if (length(uniprotkb) > 1L) {
-    
-    message("Starting multiple queries...")
-    
-    ans <- vector("list", length(uniprotkb))
-    for (i in seq_along(uniprotkb)) {
-      
-      # Making the query
-      ans[[i]] <- get_info_uniprot(
-        uniprotkb = uniprotkb[i], skip_failed = skip_failed, db = db
-        )
-      
-      if (!(i %% 10))
-        message(sprintf("% 4i/% 4i complete...", i, length(uniprotkb)))
-    }
-    message("done.")
-    names(ans) <- uniprotkb
-    return(ans)
-  }
-  
-  # Selecting the source
-  query <- if (db == "pfam")
-    "http://pfam.xfam.org/protein/%s?output=xml"
-  else if (db == "uniprot")
-    "https://www.uniprot.org/uniprot/%s.txt"
-  
-  res <- httr::GET(
-    sprintf(query, uniprotkb)
-    )
-  
-  # Checking status
-  if (httr::status_code(res) != 200) {
-    if (skip_failed) {
-      warning("The query failed with status: ", httr::status_code(res))
-      return(NULL)
-    } else {
-      stop("The query failed with status: ", httr::status_code(res))
-    }
-    
-  }
-  
-  # Returning raw content
-  ans <- xml2::as_list(httr::content(res))
-  
-  if (db == "pfam") {
-    return(ans)
-  }
-  
-  return(ans)
-  
-}
+# ans <- pfamscanr::get_info_uniprot("P00789")
 
 pfam_ids <- unique(dat[,as.character(UniProtKB)])
 pfam_ids <- get_info_uniprot(pfam_ids)
@@ -86,7 +31,7 @@ pfam_ids <- get_info_uniprot(pfam_ids)
 # names(pfam_ids)[c(259, 642)]
 # [1] "F1QJU1"     "A0A0R4ITP9"
 
-save.image("data/sifter_data.rda")
+save.image("data/aphylo_families_entries.rda")
 
 # Setting up the data to be used with SIFTER -----------------------------------
 
@@ -139,4 +84,21 @@ which(!names(fasta) %in% pfamscan_results$seq$name)
 # 22 out of 1337 in total
 # [1]   53  566  605  606  608  924  925  926  927  928 1066 1067 1070 1071 1072 1073 1074 1075 1076 1077 1078 1079
 
-saveRDS(pfamscan_results, "data/sifter_data_pfamscan.rds")
+saveRDS(pfamscan_results, "data/aphylo_families_pfamscan.rds")
+
+# ------------------------------------------------------------------------------
+
+# We will create files in aphylo_families, and the files will be
+# indexed by the panther families.
+families <- dat[, .N, by = tree][order(N),] # PTHR10438
+
+for (f in as.character(families$tree)) {
+  proteins <- dat[tree == f, as.character(UniProtKB)]
+  
+  # Filtering the results
+  proteins <- pfamscan_results[pfamscan_results$seq$name %in% proteins,]
+  as_tblout(
+    proteins,
+    output = sprintf("data/aphylo_families/pfam_%s.txt", f)
+    )
+}

@@ -1,0 +1,11 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q8TCT8	79	144	55	148	PF02225.22	PA	Family	20	85	89	29.5	5.8e-07	1	CL0364
+Q8TCT8	210	494	210	496	PF04258.13	Peptidase_A22B	Family	1	282	284	265.5	6.2e-79	1	CL0130
+Q8IUH8	250	529	241	532	PF04258.13	Peptidase_A22B	Family	8	281	284	211.8	1.4e-62	1	CL0130
+Q8TCT7	73	151	65	151	PF02225.22	PA	Family	4	89	89	36.6	3.4e-09	1	CL0364
+Q8TCT7	213	502	213	505	PF04258.13	Peptidase_A22B	Family	1	281	284	293.6	1.7e-87	1	CL0130
+Q8TCT9	64	349	62	350	PF04258.13	Peptidase_A22B	Family	3	283	284	342.4	2.2e-102	1	CL0130
+Q8TCT6	61	372	60	374	PF04258.13	Peptidase_A22B	Family	2	282	284	314.7	6.2e-94	1	CL0130

@@ -1,0 +1,9 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+O96008	79	355	79	355	PF01459.22	Porin_3	Family	1	270	270	259.9	2.6e-77	1	CL0193
+Q9QYA2	79	355	79	355	PF01459.22	Porin_3	Family	1	270	270	262.2	5.4e-78	1	CL0193
+Q75Q40	79	355	79	355	PF01459.22	Porin_3	Family	1	270	270	262.7	3.7e-78	1	CL0193
+A1Z6L1	55	334	55	334	PF01459.22	Porin_3	Family	1	270	270	259.7	3.1e-77	1	CL0193
+Q9LHE5	31	303	30	303	PF01459.22	Porin_3	Family	2	270	270	250.3	2.3e-74	1	CL0193

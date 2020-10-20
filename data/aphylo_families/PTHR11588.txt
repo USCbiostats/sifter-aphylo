@@ -1,0 +1,21 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P24636	3	211	3	212	PF00091.25	Tubulin	Domain	1	196	197	232.4	5.3e-69	1	CL0566
+P24636	261	382	261	383	PF03953.17	Tubulin_C	Domain	1	125	126	136.4	5.6e-40	1	CL0442
+P29515	3	211	3	212	PF00091.25	Tubulin	Domain	1	196	197	233.3	2.7e-69	1	CL0566
+P29515	261	382	261	383	PF03953.17	Tubulin_C	Domain	1	125	126	140.1	3.9e-41	1	CL0442
+P11139	3	213	3	214	PF00091.25	Tubulin	Domain	1	196	197	227.4	1.8e-67	1	CL0566
+P11139	263	392	263	393	PF03953.17	Tubulin_C	Domain	1	125	126	170.8	1.3e-50	1	CL0442
+B9DHQ0	3	213	3	214	PF00091.25	Tubulin	Domain	1	196	197	226.9	2.6e-67	1	CL0566
+B9DHQ0	263	392	263	393	PF03953.17	Tubulin_C	Domain	1	125	126	170.0	2.3e-50	1	CL0442
+Q56WH1	3	213	3	214	PF00091.25	Tubulin	Domain	1	196	197	226.9	2.6e-67	1	CL0566
+Q56WH1	263	392	263	393	PF03953.17	Tubulin_C	Domain	1	125	126	170.0	2.3e-50	1	CL0442
+B9DGT7	3	213	3	214	PF00091.25	Tubulin	Domain	1	196	197	228.3	9.5e-68	1	CL0566
+B9DGT7	263	392	263	393	PF03953.17	Tubulin_C	Domain	1	125	126	170.8	1.3e-50	1	CL0442
+P29511	3	213	3	214	PF00091.25	Tubulin	Domain	1	196	197	228.3	9.5e-68	1	CL0566
+P29511	263	392	263	393	PF03953.17	Tubulin_C	Domain	1	125	126	170.8	1.3e-50	1	CL0442
+Q0WV25	3	213	3	214	PF00091.25	Tubulin	Domain	1	196	197	228.3	9.5e-68	1	CL0566
+Q0WV25	263	392	263	393	PF03953.17	Tubulin_C	Domain	1	125	126	170.8	1.3e-50	1	CL0442
+Q9UJT1	2	213	2	214	PF00091.25	Tubulin	Domain	1	196	197	207.7	1.9e-61	1	CL0566

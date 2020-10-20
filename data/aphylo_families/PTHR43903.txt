@@ -1,0 +1,8 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q8BYM5	38	601	37	601	PF00135.28	COesterase	Domain	2	512	512	650.2	2.5e-195	1	CL0028
+Q62889	41	624	40	624	PF00135.28	COesterase	Domain	2	512	512	647.0	2.4e-194	1	CL0028
+Q99K10	52	626	51	626	PF00135.28	COesterase	Domain	2	512	512	634.6	1.3e-190	1	CL0028
+Q62765	52	626	51	626	PF00135.28	COesterase	Domain	2	512	512	634.6	1.3e-190	1	CL0028

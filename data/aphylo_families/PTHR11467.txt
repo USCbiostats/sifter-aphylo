@@ -1,0 +1,16 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q8VIK3	47	121	46	122	PF00538.19	Linker_histone	Domain	2	73	74	77.2	9.1e-22	1	CL0123
+Q92522	47	117	46	117	PF00538.19	Linker_histone	Domain	3	74	74	64.2	1e-17	1	CL0123
+P43274	38	108	37	108	PF00538.19	Linker_histone	Domain	2	74	74	80.6	8.1e-23	1	CL0123
+P10922	25	96	25	96	PF00538.19	Linker_histone	Domain	1	74	74	96.8	7e-28	1	CL0123
+Q18336	37	110	37	111	PF00538.19	Linker_histone	Domain	1	73	74	87.5	5.4e-25	1	CL0123
+Q9FYS5	13	74	12	81	PF00538.19	Linker_histone	Domain	2	64	74	43.7	2.6e-11	1	CL0123
+Q9FYS5	87	98	87	99	PF02178.19	AT_hook	Motif	1	12	13	11.7	0.2	1	No_clan
+Q9FYS5	113	124	113	125	PF02178.19	AT_hook	Motif	1	12	13	11.4	0.25	1	No_clan
+Q9FYS5	138	149	138	150	PF02178.19	AT_hook	Motif	1	12	13	10.0	0.67	1	No_clan
+Q9FYS5	173	184	173	185	PF02178.19	AT_hook	Motif	1	12	13	10.0	0.7	1	No_clan
+Q4V3D1	75	137	75	142	PF00538.19	Linker_histone	Domain	1	64	74	50.4	2.1e-13	1	CL0123
+P26569	62	127	62	129	PF00538.19	Linker_histone	Domain	1	72	74	66.7	1.7e-18	1	CL0123

@@ -1,0 +1,23 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P51170	32	551	32	552	PF00858.24	ASC	Family	1	442	443	355.8	3.5e-106	1	No_clan
+Q9WU39	32	557	32	558	PF00858.24	ASC	Family	1	442	443	356.9	1.7e-106	1	No_clan
+P37091	32	552	32	553	PF00858.24	ASC	Family	1	442	443	359.3	3e-107	1	No_clan
+P37088	62	572	62	572	PF00858.24	ASC	Family	1	443	443	361.6	6.4e-108	1	No_clan
+Q61180	87	599	87	599	PF00858.24	ASC	Family	1	443	443	360.7	1.1e-107	1	No_clan
+P37089	87	599	87	599	PF00858.24	ASC	Family	1	443	443	361.0	9.2e-108	1	No_clan
+P51168	29	542	29	543	PF00858.24	ASC	Family	1	442	443	374.0	1.1e-111	1	No_clan
+Q9WU38	29	540	29	541	PF00858.24	ASC	Family	1	442	443	367.8	8.1e-110	1	No_clan
+P37090	29	540	29	541	PF00858.24	ASC	Family	1	442	443	361.6	6.1e-108	1	No_clan
+P34886	100	696	100	696	PF00858.24	ASC	Family	1	443	443	388.1	5.8e-116	1	No_clan
+P24612	87	736	87	736	PF00858.24	ASC	Family	1	443	443	393.8	1.1e-117	1	No_clan
+Q708S4	44	458	44	458	PF00858.24	ASC	Family	1	443	443	363.3	1.8e-108	1	No_clan
+Q925H0	20	453	20	453	PF00858.24	ASC	Family	1	443	443	360.2	1.6e-107	1	No_clan
+O35240	21	461	21	461	PF00858.24	ASC	Family	1	443	443	324.1	1.5e-96	1	No_clan
+Q708S8	69	489	69	489	PF00858.24	ASC	Family	1	443	443	345.9	3.5e-103	1	No_clan
+Q708S6	23	456	23	456	PF00858.24	ASC	Family	1	443	443	375.4	4.1e-112	1	No_clan
+Q708S7	26	458	26	458	PF00858.24	ASC	Family	1	443	443	357.7	9.8e-107	1	No_clan
+Q9R0Y1	41	466	41	466	PF00858.24	ASC	Family	1	443	443	351.0	1e-104	1	No_clan
+Q9R0W5	41	466	41	466	PF00858.24	ASC	Family	1	443	443	350.7	1.3e-104	1	No_clan

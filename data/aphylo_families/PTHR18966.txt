@@ -1,0 +1,23 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q03391	88	270	76	315	PF01094.28	ANF_receptor	Family	30	209	354	40.7	1.6e-10	1	CL0144
+Q03391	479	564	470	566	PF10613.9	Lig_chan-Glu_bd	Domain	26	113	115	97.8	4.3e-28	1	CL0177
+Q03391	581	853	579	853	PF00060.26	Lig_chan	Family	3	149	149	115.9	1.3e-33	1	CL0030
+Q01098	103	254	87	286	PF01094.28	ANF_receptor	Family	61	210	354	43.9	1.7e-11	1	CL0144
+Q01098	454	537	401	539	PF10613.9	Lig_chan-Glu_bd	Domain	28	113	115	96.7	9.7e-28	1	CL0177
+Q01098	554	826	552	826	PF00060.26	Lig_chan	Family	3	149	149	122.2	1.5e-35	1	CL0030
+Q01098	837	919	837	924	PF10565.9	NMDAR2_C	Family	1	84	664	43.8	1.6e-11	1	No_clan
+Q01097	107	368	60	371	PF01094.28	ANF_receptor	Family	61	351	354	43.9	1.6e-11	1	CL0144
+Q01097	448	540	404	542	PF10613.9	Lig_chan-Glu_bd	Domain	21	113	115	102.0	2.1e-29	1	CL0177
+Q01097	556	829	555	829	PF00060.26	Lig_chan	Family	2	149	149	114.9	2.8e-33	1	CL0030
+Q01097	840	1482	840	1482	PF10565.9	NMDAR2_C	Family	1	664	664	805.0	7e-242	1	No_clan
+P35436	106	280	65	311	PF01094.28	ANF_receptor	Family	59	210	354	43.9	1.7e-11	1	CL0144
+P35436	439	539	404	541	PF10613.9	Lig_chan-Glu_bd	Domain	13	113	115	102.5	1.5e-29	1	CL0177
+P35436	555	828	554	828	PF00060.26	Lig_chan	Family	2	149	149	119.5	1e-34	1	CL0030
+P35436	839	1464	839	1464	PF10565.9	NMDAR2_C	Family	1	664	664	877.0	1.2e-263	1	No_clan
+P35438	42	358	38	360	PF01094.28	ANF_receptor	Family	6	352	354	127.6	6e-37	1	CL0144
+P35438	454	545	442	546	PF10613.9	Lig_chan-Glu_bd	Domain	27	114	115	107.2	5.3e-31	1	CL0177
+P35438	560	824	559	824	PF00060.26	Lig_chan	Family	2	149	149	131.3	2.4e-38	1	CL0030
+P35438	835	863	835	863	PF10562.9	CaM_bdg_C0	Domain	1	29	29	49.8	2.4e-13	1	No_clan
