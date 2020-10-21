@@ -171,3 +171,29 @@ for (f in families) {
 # The family PTHR23235 (taxid 7955) has no rows in pfamscan.
 # The family PTHR10730 (taxid 10090) has no rows in pfamscan.
 # The family PTHR11132 (taxid 284812) has no rows in pfamscan.
+
+# Building a super family ------------------------------------------------------
+superfam <- dat[!is.na(id)]
+proteins <- superfam[, unique(UniProtKB)]
+ids      <- superfam[, unique(id)]
+
+# Writing the list of HMM scans
+tmp <- pfamscan_results[pfamscan_results$seq$name %in% proteins,]
+
+# Writing the sequences
+fasta_f <- fasta[names(fasta) %in% proteins]
+fasta_f <- paste(fasta_f, collapse = "\n")
+cat(fasta_f, file = "data/aphylo_families/all_families.fasta")
+
+as_tblout(
+  tmp,
+  output = "data/aphylo_families/all_families.txt"
+)
+
+# Writing the protein list
+cat(
+  ids, sep = "\n",
+  file = "data/aphylo_families/all_families_proteins.txt"
+)
+
+

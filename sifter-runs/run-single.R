@@ -125,15 +125,5 @@ run_sifter_on_aphylo <- function(
 
 SIFTER_PASS <- readLines("sifter_db_pass.txt")
 
-# Listing all the families
-families <- list.files(path = "data/aphylo_families/", pattern = "*.fasta")
-families <- setdiff(unique(gsub("[.].+", "", families)), "all_families")
-
-for (f in families) {
-  
-  ans <- run_sifter_on_aphylo(f, SIFTER_PASS)
-  saveRDS(ans, file = sprintf("sifter-runs/%s.rds", f))
-  
-}
-
-  
+ans <- run_sifter_on_aphylo("all_families", SIFTER_PASS)
+saveRDS(ans, file = "sifter-runs/all_families.rds")

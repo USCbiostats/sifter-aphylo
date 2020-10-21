@@ -7,6 +7,9 @@ model_aphylo <- window(model_aphylo, start=5000)
 tree <- read.tree("data-raw/nudix/PF00293.tree")
 tree$node.label <- sprintf("node%03i", seq_len(ape::Nnode(tree)))
 
+# There are duplicates of Q9RXI4_DEIRA and Q9RYE5_DEIRA. Not sure which one is
+# SIFTER using. Different regions in the seq.
+
 # Finding the corresponding annotations
 ann  <- fread("data-raw/nudix/nudix-ann.tsv")
 
@@ -100,7 +103,7 @@ plot(pred_auc)
 # prediction when the intersection of the two sets was not empty. 
 
 acc_at_least_one <- lapply(ids, function(i) {
-  top_pred <- which(pred[i,] == max(pred[i,]))
+  top_pred <- which(abs(pred[i,] - max(pred[i,])) < 1e-10)
   true_ann <- which(ans$tip.annotation[i,] == 1)
   data.frame(
     pred = paste(top_pred, collapse=","),
@@ -108,13 +111,21 @@ acc_at_least_one <- lapply(ids, function(i) {
     accurate = ifelse(length(intersect(top_pred, true_ann)), 1, 0)
   )
 })
+
 acc_at_least_one <- do.call(rbind, acc_at_least_one)
-rownames(acc_at_least_one) <- rownames(pred[ids,])
+
+# Q9RXI4_DEIRA is repeated
+id <- which(rownames(pred)[ids] == "Q9RXI4_DEIRA")[1]
+id <- c(which(rownames(pred)[ids] == "Q9RYE5_DEIRA")[1], id)
+acc_at_least_one <- acc_at_least_one[-id,]
+
+# rownames(acc_at_least_one) <- rownames(pred)[ids][-id]
+
 table(acc_at_least_one$accurate)
 #  0  1 
-# 65 33 
+# 63 33 
 
-acc_at_least_one
+# acc_at_least_one
 #               pred                true accurate
 # 16              53                  45        0
 # 31              50                  45        0
