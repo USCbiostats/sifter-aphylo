@@ -1,0 +1,14 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P92939	27	94	26	94	PF00690.26	Cation_ATPase_N	Domain	2	69	69	63.4	1.2e-17	1	No_clan
+P92939	147	361	146	361	PF00122.20	E1-E2_ATPase	Family	2	181	181	172.2	7.7e-51	1	No_clan
+P92939	446	547	445	547	PF13246.6	Cation_ATPase	Family	2	91	91	56.6	2e-15	1	CL0137
+P92939	608	743	532	743	PF00702.26	Hydrolase	Domain	103	210	210	64.6	1.5e-17	1	CL0137
+P92939	814	1040	813	1040	PF00689.21	Cation_ATPase_C	Family	2	182	182	167.6	2.2e-49	1	No_clan
+Q9SY55	5	72	4	72	PF00690.26	Cation_ATPase_N	Domain	2	69	69	69.1	1.9e-19	1	No_clan
+Q9SY55	122	324	120	325	PF00122.20	E1-E2_ATPase	Family	3	180	181	164.9	1.3e-48	1	No_clan
+Q9SY55	416	524	415	524	PF13246.6	Cation_ATPase	Family	2	91	91	77.2	7.7e-22	1	CL0137
+Q9SY55	582	704	469	704	PF00702.26	Hydrolase	Domain	107	210	210	60.4	2.9e-16	1	CL0137
+Q9SY55	774	973	773	973	PF00689.21	Cation_ATPase_C	Family	2	182	182	152.6	8.9e-45	1	No_clan

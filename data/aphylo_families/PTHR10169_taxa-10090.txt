@@ -1,0 +1,10 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q01320	78	223	75	224	PF02518.26	HATPase_c	Domain	4	111	112	59.0	5.6e-16	1	CL0025
+Q01320	265	425	265	429	PF00204.25	DNA_gyraseB	Domain	1	169	174	95.3	2.9e-27	1	CL0329
+Q01320	456	557	455	571	PF01751.22	Toprim	Family	2	88	103	36.0	6.1e-09	1	CL0413
+Q01320	572	710	572	710	PF16898.5	TOPRIM_C	Family	1	128	128	171.7	7.4e-51	1	No_clan
+Q01320	712	1168	712	1169	PF00521.20	DNA_topoisoIV	Family	1	425	426	449.8	9e-135	1	No_clan
+Q01320	1431	1518	1425	1518	PF08070.11	DTHCT	Family	7	104	104	55.4	8.3e-15	1	No_clan

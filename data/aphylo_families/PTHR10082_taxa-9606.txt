@@ -1,0 +1,15 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P18084	26	75	26	76	PF17205.3	PSI_integrin	Domain	1	45	46	51.1	8.3e-14	1	CL0630
+P18084	134	382	133	382	PF00362.18	Integrin_beta	Domain	2	248	248	362.1	1.6e-108	1	CL0128
+P18084	465	493	465	493	PF18372.1	I-EGF_1	Domain	1	29	29	38.6	7.9e-10	1	CL0001
+P18084	635	719	635	719	PF07965.12	Integrin_B_tail	Domain	1	85	85	63.5	1.9e-17	1	No_clan
+P18084	743	788	743	788	PF08725.11	Integrin_b_cyt	Domain	1	45	45	63.5	1e-17	1	No_clan
+P05556	25	76	25	76	PF17205.3	PSI_integrin	Domain	1	46	46	47.9	7.9e-13	1	CL0630
+P05556	138	382	138	382	PF00362.18	Integrin_beta	Domain	1	248	248	385.1	1.5e-115	1	CL0128
+P05556	466	495	466	495	PF18372.1	I-EGF_1	Domain	1	29	29	45.3	6.5e-12	1	CL0001
+P05556	599	630	599	630	PF07974.13	EGF_2	Domain	1	32	32	24.9	1.9e-05	1	CL0001
+P05556	640	728	640	728	PF07965.12	Integrin_B_tail	Domain	1	85	85	75.9	2.5e-21	1	No_clan
+P05556	752	795	752	796	PF08725.11	Integrin_b_cyt	Domain	1	44	45	79.9	7.8e-23	1	No_clan

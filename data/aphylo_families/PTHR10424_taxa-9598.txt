@@ -1,0 +1,5 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P61557	292	511	211	512	PF00429.19	TLV_coat	Family	335	560	561	210.4	4.7e-62	1	No_clan

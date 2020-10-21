@@ -1,0 +1,6 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q8VYU3	32	184	32	188	PF01227.22	GTP_cyclohydroI	Domain	1	141	179	123.3	7.1e-36	1	CL0334
+Q8VYU3	264	447	263	449	PF01227.22	GTP_cyclohydroI	Domain	2	177	179	132.6	1e-38	1	CL0334

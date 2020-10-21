@@ -1,0 +1,6 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+O48652	26	186	26	197	PF00875.18	DNA_photolyase	Domain	1	151	164	154.0	3.4e-45	1	CL0039
+O48652	315	512	314	514	PF03441.14	FAD_binding_7	Domain	2	200	202	258.1	4.4e-77	1	No_clan

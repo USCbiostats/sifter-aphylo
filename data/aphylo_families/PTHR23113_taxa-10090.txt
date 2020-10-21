@@ -1,0 +1,9 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9EQZ6	63	150	61	150	PF00027.29	cNMP_binding	Domain	3	89	89	57.0	1.5e-15	1	CL0029
+Q9EQZ6	222	289	220	289	PF00610.21	DEP	Domain	4	72	72	71.4	4.6e-20	1	CL0123
+Q9EQZ6	378	458	375	459	PF00027.29	cNMP_binding	Domain	4	87	89	57.4	1.1e-15	1	CL0029
+Q9EQZ6	500	605	499	605	PF00618.20	RasGEF_N	Domain	2	105	105	50.3	2.3e-13	1	CL0542
+Q9EQZ6	775	952	775	952	PF00617.19	RasGEF	Family	1	177	177	172.5	9.2e-51	1	No_clan

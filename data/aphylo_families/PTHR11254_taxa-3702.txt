@@ -1,0 +1,20 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q8H0T4	85	203	84	207	PF06012.12	DUF908	Family	3	151	358	48.3	9.3e-13	1	No_clan
+Q8H0T4	201	356	197	357	PF06012.12	DUF908	Family	202	357	358	101.4	6.8e-29	1	No_clan
+Q8H0T4	416	764	416	765	PF06025.12	DUF913	Family	1	367	368	285.8	4.5e-85	1	No_clan
+Q8H0T4	1272	1309	1272	1309	PF00627.31	UBA	Domain	1	37	37	30.6	2.2e-07	1	CL0214
+Q8H0T4	2587	2616	2585	2619	PF14377.6	UBM	Repeat	3	32	35	36.4	2.2e-09	1	No_clan
+Q8H0T4	2626	2656	2624	2656	PF14377.6	UBM	Repeat	4	34	35	40.1	1.5e-10	1	No_clan
+Q8H0T4	2661	2693	2659	2694	PF14377.6	UBM	Repeat	2	34	35	30.7	1.4e-07	1	No_clan
+Q8H0T4	3347	3657	3346	3658	PF00632.25	HECT	Domain	2	306	307	301.4	8.2e-90	1	CL0552
+Q8GY23	85	204	84	207	PF06012.12	DUF908	Family	3	152	358	55.7	5.4e-15	1	No_clan
+Q8GY23	208	356	202	357	PF06012.12	DUF908	Family	209	357	358	91.4	7.4e-26	1	No_clan
+Q8GY23	417	762	416	763	PF06025.12	DUF913	Family	2	367	368	291.0	1.3e-86	1	No_clan
+Q8GY23	1271	1307	1270	1307	PF00627.31	UBA	Domain	2	37	37	24.4	1.9e-05	1	CL0214
+Q8GY23	2603	2632	2601	2635	PF14377.6	UBM	Repeat	3	32	35	36.4	2.3e-09	1	No_clan
+Q8GY23	2641	2672	2640	2673	PF14377.6	UBM	Repeat	3	34	35	40.6	1e-10	1	No_clan
+Q8GY23	2678	2709	2675	2710	PF14377.6	UBM	Repeat	3	34	35	29.5	3.3e-07	1	No_clan
+Q8GY23	3370	3680	3369	3681	PF00632.25	HECT	Domain	2	306	307	305.5	4.7e-91	1	CL0552

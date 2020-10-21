@@ -1,0 +1,9 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q3UYI1	14	381	14	382	PF00864.19	P2X_receptor	Family	1	366	367	527.6	1.6e-158	1	No_clan
+Q9Z1M0	11	395	11	397	PF00864.19	P2X_receptor	Family	1	365	367	520.2	2.8e-156	1	No_clan
+Q8K3P1	28	386	27	388	PF00864.19	P2X_receptor	Family	2	364	367	489.0	8.8e-147	1	No_clan
+Q3UR32	8	364	8	367	PF00864.19	P2X_receptor	Family	1	364	367	494.0	2.6e-148	1	No_clan
+Q9JJX6	13	379	13	381	PF00864.19	P2X_receptor	Family	1	365	367	572.7	3.2e-172	1	No_clan

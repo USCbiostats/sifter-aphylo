@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9NYB0	18	100	17	100	PF16589.5	BRCT_2	Family	2	85	85	57.2	1.7e-15	1	CL0459
+Q9NYB0	132	195	132	196	PF08914.11	Myb_DNA-bind_2	Domain	1	64	65	107.8	2.2e-31	1	CL0123
+Q9NYB0	322	397	321	398	PF11626.8	Rap1_C	Family	2	83	84	43.6	2.4e-11	1	No_clan

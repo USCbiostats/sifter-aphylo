@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P38705	243	421	239	422	PF00587.25	tRNA-synt_2b	Domain	5	178	179	85.6	3.9e-24	1	CL0040
+P07284	1	112	1	112	PF02403.22	Seryl_tRNA_N	Domain	1	108	108	85.9	2e-24	1	CL0298
+P07284	232	419	232	419	PF00587.25	tRNA-synt_2b	Domain	1	179	179	110.4	9.7e-32	1	CL0040

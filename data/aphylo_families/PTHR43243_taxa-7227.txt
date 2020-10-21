@@ -1,0 +1,6 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9VNP7	27	461	27	471	PF13520.6	AA_permease_2	Family	1	402	425	178.4	2.1e-52	1	CL0062
+Q9VNP7	507	557	507	557	PF13906.6	AA_permease_C	Domain	1	51	51	82.1	2.1e-23	1	CL0062

@@ -1,0 +1,19 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q8CJG0	37	167	37	167	PF16486.5	ArgoN	Domain	1	138	138	104.4	7.1e-30	1	No_clan
+Q8CJG0	177	227	177	227	PF08699.10	ArgoL1	Domain	1	52	52	74.8	3e-21	1	No_clan
+Q8CJG0	247	366	232	366	PF02170.22	PAZ	Domain	11	137	137	93.4	1e-26	1	CL0638
+Q8CJG0	375	421	375	421	PF16488.5	ArgoL2	Family	1	47	47	48.9	5.8e-13	1	No_clan
+Q8CJG0	430	511	430	512	PF16487.5	ArgoMid	Domain	1	83	84	112.6	7.7e-33	1	No_clan
+Q8CJG0	519	818	518	819	PF02171.17	Piwi	Family	2	301	302	385.1	2.2e-115	1	CL0219
+Q8CDG1	337	383	336	385	PF08699.10	ArgoL1	Domain	2	50	52	33.7	2.1e-08	1	No_clan
+Q8CDG1	389	521	389	522	PF02170.22	PAZ	Domain	1	136	137	111.7	2.2e-32	1	CL0638
+Q8CDG1	667	955	666	957	PF02171.17	Piwi	Family	2	300	302	278.2	7.8e-83	1	CL0219
+Q8CGT6	270	400	269	401	PF02170.22	PAZ	Domain	2	136	137	103.1	1e-29	1	CL0638
+Q8CGT6	541	833	541	834	PF02171.17	Piwi	Family	1	301	302	302.0	4.5e-90	1	CL0219
+Q9JMB7	1	107	1	107	PF05831.11	GAGE	Family	1	107	107	75.1	5.5e-21	1	No_clan
+Q9JMB7	228	274	228	276	PF08699.10	ArgoL1	Domain	1	49	52	23.0	4.6e-05	1	No_clan
+Q9JMB7	281	413	281	414	PF02170.22	PAZ	Domain	1	136	137	124.6	2.3e-36	1	CL0638
+Q9JMB7	556	848	556	848	PF02171.17	Piwi	Family	1	302	302	349.9	1.1e-104	1	CL0219

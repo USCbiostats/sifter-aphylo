@@ -1,0 +1,10 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q68FP1	74	155	73	156	PF00626.22	Gelsolin	Domain	2	75	76	59.3	2.6e-16	1	CL0092
+Q68FP1	196	268	194	269	PF00626.22	Gelsolin	Domain	3	75	76	68.1	4.7e-19	1	CL0092
+Q68FP1	315	387	311	388	PF00626.22	Gelsolin	Domain	6	75	76	53.1	2.2e-14	1	CL0092
+Q68FP1	453	534	452	534	PF00626.22	Gelsolin	Domain	2	76	76	64.5	6e-18	1	CL0092
+Q68FP1	576	640	572	640	PF00626.22	Gelsolin	Domain	5	76	76	31.3	1.4e-07	1	CL0092
+Q68FP1	679	754	677	755	PF00626.22	Gelsolin	Domain	3	75	76	60.9	8.2e-17	1	CL0092

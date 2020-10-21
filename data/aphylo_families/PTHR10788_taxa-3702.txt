@@ -1,0 +1,18 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9ZV48	51	537	50	538	PF00982.21	Glyco_transf_20	Family	2	473	474	615.0	8.2e-185	1	CL0113
+Q9ZV48	587	821	587	822	PF02358.16	Trehalose_PPase	Family	1	232	233	275.0	3.7e-82	1	CL0137
+Q0WUI9	58	540	57	541	PF00982.21	Glyco_transf_20	Family	2	473	474	639.3	3.6e-192	1	CL0113
+Q0WUI9	590	824	590	825	PF02358.16	Trehalose_PPase	Family	1	232	233	276.4	1.3e-82	1	CL0137
+Q9LRA7	60	545	59	546	PF00982.21	Glyco_transf_20	Family	2	473	474	621.9	6.4e-187	1	CL0113
+Q9LRA7	595	829	595	830	PF02358.16	Trehalose_PPase	Family	1	232	233	266.1	1.9e-79	1	CL0137
+Q9LMI0	60	539	59	540	PF00982.21	Glyco_transf_20	Family	2	473	474	588.5	8.7e-177	1	CL0113
+Q9LMI0	589	823	589	824	PF02358.16	Trehalose_PPase	Family	1	232	233	251.3	6.2e-75	1	CL0137
+O23617	61	545	60	546	PF00982.21	Glyco_transf_20	Family	2	473	474	641.6	6.9e-193	1	CL0113
+O23617	595	829	595	830	PF02358.16	Trehalose_PPase	Family	1	232	233	271.3	4.8e-81	1	CL0137
+Q94AH8	85	556	53	557	PF00982.21	Glyco_transf_20	Family	20	473	474	591.8	8.9e-178	1	CL0113
+Q94AH8	606	840	606	841	PF02358.16	Trehalose_PPase	Family	1	232	233	247.2	1.1e-73	1	CL0137
+Q9SYM4	93	558	92	559	PF00982.21	Glyco_transf_20	Family	2	473	474	629.8	2.7e-189	1	CL0113
+Q9SYM4	604	842	603	843	PF02358.16	Trehalose_PPase	Family	2	232	233	208.3	8.6e-62	1	CL0137

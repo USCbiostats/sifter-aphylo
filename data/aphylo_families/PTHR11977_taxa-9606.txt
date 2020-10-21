@@ -1,0 +1,23 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9Y6U3	28	107	26	108	PF00626.22	Gelsolin	Domain	3	75	76	60.1	1.4e-16	1	CL0092
+Q9Y6U3	148	220	146	221	PF00626.22	Gelsolin	Domain	3	75	76	64.2	7.5e-18	1	CL0092
+Q9Y6U3	265	340	263	341	PF00626.22	Gelsolin	Domain	3	75	76	54.3	9.4e-15	1	CL0092
+Q9Y6U3	410	482	405	483	PF00626.22	Gelsolin	Domain	6	75	76	49.9	2.1e-13	1	CL0092
+Q9Y6U3	525	590	521	590	PF00626.22	Gelsolin	Domain	5	76	76	30.5	2.5e-07	1	CL0092
+Q9Y6U3	629	703	626	704	PF00626.22	Gelsolin	Domain	4	75	76	52.9	2.6e-14	1	CL0092
+P06396	76	158	75	158	PF00626.22	Gelsolin	Domain	2	76	76	60.8	8.6e-17	1	CL0092
+P06396	198	270	196	271	PF00626.22	Gelsolin	Domain	3	75	76	70.8	6.6e-20	1	CL0092
+P06396	317	389	313	390	PF00626.22	Gelsolin	Domain	6	75	76	56.5	1.9e-15	1	CL0092
+P06396	455	536	454	536	PF00626.22	Gelsolin	Domain	2	76	76	67.2	8.8e-19	1	CL0092
+P06396	576	642	574	642	PF00626.22	Gelsolin	Domain	3	76	76	32.5	5.9e-08	1	CL0092
+P06396	681	756	679	757	PF00626.22	Gelsolin	Domain	3	75	76	61.6	5e-17	1	CL0092
+P09327	28	108	26	108	PF00626.22	Gelsolin	Domain	3	76	76	66.1	2e-18	1	CL0092
+P09327	148	218	146	221	PF00626.22	Gelsolin	Domain	3	73	76	54.3	9.2e-15	1	CL0092
+P09327	269	342	266	343	PF00626.22	Gelsolin	Domain	4	75	76	60.3	1.2e-16	1	CL0092
+P09327	409	489	407	489	PF00626.22	Gelsolin	Domain	3	76	76	68.4	3.7e-19	1	CL0092
+P09327	530	595	526	595	PF00626.22	Gelsolin	Domain	5	76	76	26.3	4.9e-06	1	CL0092
+P09327	634	707	630	708	PF00626.22	Gelsolin	Domain	5	75	76	72.5	1.9e-20	1	CL0092
+P09327	792	827	792	827	PF02209.19	VHP	Domain	1	36	36	58.7	4.3e-16	1	No_clan

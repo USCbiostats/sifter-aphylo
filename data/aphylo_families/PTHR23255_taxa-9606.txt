@@ -1,0 +1,14 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P37023	174	200	173	200	PF08515.12	TGF_beta_GS	Family	2	28	28	55.8	2.3e-15	1	No_clan
+P37023	204	488	202	489	PF07714.17	Pkinase_Tyr	Domain	3	258	259	119.2	1.8e-34	1	CL0016
+Q04771	33	102	33	103	PF01064.23	Activin_recp	Domain	1	84	85	35.5	1.6e-08	1	CL0117
+Q04771	179	206	179	206	PF08515.12	TGF_beta_GS	Family	1	28	28	61.5	3.7e-17	1	No_clan
+Q04771	209	494	208	495	PF07714.17	Pkinase_Tyr	Domain	2	258	259	123.3	1e-35	1	CL0016
+P37173	49	157	49	159	PF08917.10	ecTbetaR2	Domain	1	108	110	145.0	7e-43	1	CL0117
+P37173	245	536	244	538	PF07714.17	Pkinase_Tyr	Domain	2	257	259	125.7	1.9e-36	1	CL0016
+P36897	34	109	34	110	PF01064.23	Activin_recp	Domain	1	84	85	36.4	8.7e-09	1	CL0117
+P36897	176	203	176	203	PF08515.12	TGF_beta_GS	Family	1	28	28	60.9	5.8e-17	1	No_clan
+P36897	208	489	205	492	PF00069.25	Pkinase	Domain	4	259	264	123.9	7.3e-36	1	CL0016

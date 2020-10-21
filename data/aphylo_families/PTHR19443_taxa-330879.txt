@@ -1,0 +1,8 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q4WHC3	27	221	26	221	PF00349.21	Hexokinase_1	Domain	2	199	199	247.0	1.5e-73	1	CL0108
+Q4WHC3	227	467	227	467	PF03727.16	Hexokinase_2	Domain	1	240	240	276.3	1.9e-82	1	CL0108
+Q4WCS2	10	216	8	216	PF00349.21	Hexokinase_1	Domain	3	199	199	245.2	5.4e-73	1	CL0108
+Q4WCS2	226	482	225	482	PF03727.16	Hexokinase_2	Domain	2	240	240	268.9	3.5e-80	1	CL0108

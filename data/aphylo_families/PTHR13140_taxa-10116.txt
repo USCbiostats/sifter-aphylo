@@ -1,0 +1,11 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q8CJE3	67	729	67	729	PF00063.21	Myosin_head	Domain	1	677	677	795.9	2.7e-239	1	CL0023
+Q8CJE3	769	787	768	788	PF00612.27	IQ	Motif	2	20	21	25.5	6.5e-06	1	CL0220
+Q8CJE3	815	834	814	834	PF00612.27	IQ	Motif	2	21	21	14.1	0.029	1	CL0220
+Q8CJE3	838	857	837	857	PF00612.27	IQ	Motif	2	21	21	12.5	0.097	1	CL0220
+Q8CJE3	1154	1251	1151	1252	PF00784.17	MyTH4	Family	4	107	108	104.0	5.7e-30	1	No_clan
+Q8CJE3	1756	1857	1755	1857	PF00784.17	MyTH4	Family	2	108	108	92.0	3e-26	1	No_clan
+Q8CJE3	1976	2077	1968	2077	PF00373.18	FERM_M	Domain	14	118	118	62.4	4.9e-17	1	CL0632

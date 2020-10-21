@@ -1,0 +1,14 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9SGY1	44	313	41	316	PF00664.23	ABC_membrane	Family	4	271	274	159.4	1.4e-46	1	CL0241
+Q9SGY1	380	528	379	528	PF00005.27	ABC_tran	Domain	2	137	137	116.1	1.6e-33	1	CL0023
+Q9SGY1	664	935	663	935	PF00664.23	ABC_membrane	Family	3	274	274	165.1	2.5e-48	1	CL0241
+Q9SGY1	1002	1149	1000	1149	PF00005.27	ABC_tran	Domain	3	137	137	113.5	1.1e-32	1	CL0023
+Q9M0G9	109	389	108	390	PF00664.23	ABC_membrane	Family	2	273	274	126.7	1.3e-36	1	CL0241
+Q9M0G9	455	604	455	604	PF00005.27	ABC_tran	Domain	1	137	137	119.7	1.2e-34	1	CL0023
+Q9FUT3	103	387	103	388	PF00664.23	ABC_membrane	Family	1	273	274	130.3	1.1e-37	1	CL0241
+Q9FUT3	453	602	453	602	PF00005.27	ABC_tran	Domain	1	137	137	118.3	3.4e-34	1	CL0023
+Q9LVM1	144	432	143	433	PF00664.23	ABC_membrane	Family	2	273	274	125.5	3e-36	1	CL0241
+Q9LVM1	495	644	495	644	PF00005.27	ABC_tran	Domain	1	137	137	117.9	4.4e-34	1	CL0023

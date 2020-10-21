@@ -1,0 +1,19 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9HBX9	26	62	25	62	PF00057.18	Ldl_recept_a	Repeat	2	37	37	28.9	9.9e-07	1	No_clan
+Q9HBX9	127	186	126	186	PF13855.6	LRR_8	Repeat	2	61	61	56.0	2.4e-15	1	CL0022
+Q9HBX9	247	307	247	307	PF13855.6	LRR_8	Repeat	1	61	61	48.0	7.5e-13	1	CL0022
+Q9HBX9	422	681	422	681	PF00001.21	7tm_1	Family	1	263	263	91.9	4e-26	1	CL0192
+Q9BXB1	29	55	29	56	PF01462.18	LRRNT	Family	2	27	28	29.6	3.9e-07	1	No_clan
+Q9BXB1	60	117	59	117	PF13855.6	LRR_8	Repeat	4	61	61	50.5	1.3e-13	1	CL0022
+Q9BXB1	177	237	177	237	PF13855.6	LRR_8	Repeat	1	61	61	57.2	1.1e-15	1	CL0022
+Q9BXB1	248	305	248	307	PF13855.6	LRR_8	Repeat	1	58	61	35.2	7.8e-09	1	CL0022
+Q9BXB1	367	425	365	425	PF13855.6	LRR_8	Repeat	3	61	61	47.5	1.1e-12	1	CL0022
+Q9BXB1	556	801	555	801	PF00001.21	7tm_1	Family	2	263	263	42.0	6.6e-11	1	CL0192
+O75473	33	64	33	65	PF01462.18	LRRNT	Family	1	27	28	26.7	3.1e-06	1	No_clan
+O75473	92	150	90	150	PF13855.6	LRR_8	Repeat	3	61	61	57.0	1.2e-15	1	CL0022
+O75473	188	246	188	246	PF13855.6	LRR_8	Repeat	3	61	61	51.9	4.7e-14	1	CL0022
+O75473	257	314	257	318	PF13855.6	LRR_8	Repeat	1	58	61	41.9	6e-11	1	CL0022
+O75473	375	434	374	434	PF13855.6	LRR_8	Repeat	2	61	61	51.6	6e-14	1	CL0022

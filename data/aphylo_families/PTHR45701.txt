@@ -1,8 +1,0 @@
-# This is a simulated scan file. The original call used the json output
-# which holds more information. This is just an attempt to get the same output.
-# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
-
-Q9BV40	10	96	9	97	PF00957.21	Synaptobrevin	Family	2	88	89	110.9	1.9e-32	1	CL0445
-O70404	10	96	9	97	PF00957.21	Synaptobrevin	Family	2	88	89	112.2	7.7e-33	1	CL0445
-Q15836	11	98	11	99	PF00957.21	Synaptobrevin	Family	1	88	89	119.7	3.4e-35	1	CL0445
-P63027	28	114	28	116	PF00957.21	Synaptobrevin	Family	1	87	89	119.7	3.4e-35	1	CL0445

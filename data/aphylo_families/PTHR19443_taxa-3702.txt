@@ -1,0 +1,16 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9FZG4	45	244	43	244	PF00349.21	Hexokinase_1	Domain	3	199	199	208.1	1.2e-61	1	CL0108
+Q9FZG4	251	488	250	489	PF03727.16	Hexokinase_2	Domain	2	239	240	253.7	1.5e-75	1	CL0108
+Q56XE8	42	235	40	240	PF00349.21	Hexokinase_1	Domain	3	194	199	191.9	1.1e-56	1	CL0108
+Q56XE8	247	491	246	492	PF03727.16	Hexokinase_2	Domain	2	239	240	248.0	8.2e-74	1	CL0108
+Q9LPS1	41	236	40	239	PF00349.21	Hexokinase_1	Domain	2	196	199	195.8	7.1e-58	1	CL0108
+Q9LPS1	246	494	245	495	PF03727.16	Hexokinase_2	Domain	2	239	240	253.4	1.8e-75	1	CL0108
+Q9T071	42	240	41	240	PF00349.21	Hexokinase_1	Domain	2	199	199	90.6	1.2e-25	1	CL0108
+Q9T071	248	483	246	483	PF03727.16	Hexokinase_2	Domain	3	240	240	225.2	8e-67	1	CL0108
+P93834	42	240	40	240	PF00349.21	Hexokinase_1	Domain	3	199	199	211.9	8.4e-63	1	CL0108
+P93834	247	487	246	488	PF03727.16	Hexokinase_2	Domain	2	239	240	264.6	7.4e-79	1	CL0108
+Q42525	42	240	40	240	PF00349.21	Hexokinase_1	Domain	3	199	199	222.8	3.7e-66	1	CL0108
+Q42525	247	487	246	488	PF03727.16	Hexokinase_2	Domain	2	239	240	262.8	2.5e-78	1	CL0108

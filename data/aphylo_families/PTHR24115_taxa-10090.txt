@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+L0N7N1	399	736	399	736	PF00225.23	Kinesin	Domain	1	333	333	371.5	3.2e-111	1	CL0023
+L0N7N1	789	859	781	859	PF16183.5	Kinesin_assoc	Family	102	181	181	43.8	2.9e-11	1	No_clan
+L0N7N1	861	926	860	926	PF00498.26	FHA	Family	2	69	69	32.8	6.7e-08	1	CL0357

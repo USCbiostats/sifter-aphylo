@@ -1,0 +1,13 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q01063	162	278	162	278	PF18100.1	PDE4_UCR	Domain	1	119	119	191.2	6.9e-57	1	No_clan
+Q01063	400	641	400	641	PF00233.19	PDEase_I	Domain	1	238	238	309.0	2.4e-92	1	CL0237
+B1AWC9	166	281	166	281	PF18100.1	PDE4_UCR	Domain	1	119	119	188.2	5.9e-56	1	No_clan
+B1AWC9	405	646	405	646	PF00233.19	PDEase_I	Domain	1	238	238	312.2	2.5e-93	1	CL0237
+O89084	173	288	173	288	PF18100.1	PDE4_UCR	Domain	1	119	119	183.3	2e-54	1	No_clan
+O89084	418	659	418	659	PF00233.19	PDEase_I	Domain	1	238	238	313.8	8.3e-94	1	CL0237
+Q922S4	236	374	233	377	PF13185.6	GAF_2	Domain	4	135	138	33.9	3.3e-08	1	CL0161
+Q922S4	408	547	408	547	PF01590.26	GAF	Domain	1	133	133	58.0	1.5e-15	1	CL0161
+Q922S4	654	886	654	888	PF00233.19	PDEase_I	Domain	1	236	238	259.8	2.5e-77	1	CL0237

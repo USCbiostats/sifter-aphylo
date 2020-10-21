@@ -1,0 +1,6 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+A0A0B4JCY1	186	428	186	428	PF16178.5	Anoct_dimer	Family	1	227	227	220.2	2.9e-65	1	No_clan
+A0A0B4JCY1	431	1007	431	1007	PF04547.12	Anoctamin	Family	1	449	449	496.1	9.1e-149	1	CL0416

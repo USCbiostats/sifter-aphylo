@@ -1,0 +1,9 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P42787	49	326	46	327	PF00246.24	Peptidase_M14	Domain	4	288	289	239.8	5.3e-71	1	CL0035
+P42787	338	416	338	417	PF13620.6	CarboxypepD_reg	Domain	1	81	82	52.7	3.8e-14	1	CL0287
+P42787	462	751	462	752	PF00246.24	Peptidase_M14	Domain	1	288	289	274.1	1.8e-81	1	CL0035
+P42787	763	839	763	840	PF13620.6	CarboxypepD_reg	Domain	1	81	82	32.8	6.1e-08	1	CL0287
+P42787	1223	1294	1223	1302	PF13620.6	CarboxypepD_reg	Domain	1	76	82	38.7	8.9e-10	1	CL0287

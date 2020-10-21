@@ -1,0 +1,23 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q64566	28	94	26	94	PF00690.26	Cation_ATPase_N	Domain	3	69	69	62.9	1.6e-17	1	No_clan
+Q64566	133	328	133	328	PF00122.20	E1-E2_ATPase	Family	1	181	181	171.9	9.5e-51	1	No_clan
+Q64566	345	656	344	656	PF00702.26	Hydrolase	Domain	2	210	210	78.5	8.1e-22	1	CL0137
+Q64566	726	897	726	898	PF00689.21	Cation_ATPase_C	Family	1	181	182	155.8	9.2e-46	1	No_clan
+P11507	5	72	4	72	PF00690.26	Cation_ATPase_N	Domain	2	69	69	58.3	4.5e-16	1	No_clan
+P11507	123	329	121	329	PF00122.20	E1-E2_ATPase	Family	3	181	181	184.8	1.1e-54	1	No_clan
+P11507	418	527	418	527	PF13246.6	Cation_ATPase	Family	1	91	91	73.6	1.1e-20	1	CL0137
+P11507	685	742	682	746	PF08282.12	Hydrolase_3	Domain	194	251	255	23.7	3.5e-05	1	CL0137
+P11507	783	986	783	986	PF00689.21	Cation_ATPase_C	Family	1	182	182	156.9	4.2e-46	1	No_clan
+P18596	5	72	4	72	PF00690.26	Cation_ATPase_N	Domain	2	69	69	62.6	2.1e-17	1	No_clan
+P18596	123	329	121	329	PF00122.20	E1-E2_ATPase	Family	3	181	181	182.3	6.1e-54	1	No_clan
+P18596	418	528	418	528	PF13246.6	Cation_ATPase	Family	1	91	91	73.7	9.6e-21	1	CL0137
+P18596	687	744	684	747	PF08282.12	Hydrolase_3	Domain	195	252	255	27.6	2.2e-06	1	CL0137
+P18596	784	987	784	987	PF00689.21	Cation_ATPase_C	Family	1	182	182	154.7	2e-45	1	No_clan
+Q64578	5	72	4	72	PF00690.26	Cation_ATPase_N	Domain	2	69	69	70.4	7.7e-20	1	No_clan
+Q64578	123	329	121	329	PF00122.20	E1-E2_ATPase	Family	3	181	181	187.0	2.2e-55	1	No_clan
+Q64578	418	528	418	528	PF13246.6	Cation_ATPase	Family	1	91	91	70.2	1.2e-19	1	CL0137
+Q64578	686	743	683	747	PF08282.12	Hydrolase_3	Domain	194	251	255	25.4	1.1e-05	1	CL0137
+Q64578	784	987	784	987	PF00689.21	Cation_ATPase_C	Family	1	182	182	150.9	3e-44	1	No_clan

@@ -20,9 +20,9 @@ from the aphylo paper can be obtained from here:
 - Trees
 - GO annotations
 
-The current version of Biopython package was downloaded from [here](http://biopython.org/DIST/biopython-1.76.tar.gz)
-as the version 1.76 is the latest to support Python 2.7, which is the version
-used in SIFTER (we believe).
+The current version of Biopython package was downloaded from [here](https://github.com/biopython/biopython/archive/biopython-160.tar.gz)
+as the version 1.60 is the latest to have the module `Bio.Align.Generic`, which is
+the version used in SIFTER (we believe).
 
 We needed to install pysqlite instead of sqlite, which needed the following lib:
 
@@ -80,6 +80,9 @@ file trees.tar.gz
    
    Otherwise, the system returns with an error (source: [here](https://stackoverflow.com/questions/49194719/authentication-plugin-caching-sha2-password-cannot-be-loaded)).
 
+5. At some point you may need to install hmmer3.1b1 which can be downloaded from
+   [here](http://eddylab.org/software/hmmer/hmmer-3.1b1.tar.gz)
+
 ## Running SIFTER
 
 To run sifter, in our case, we had to include the password to the databse. In particular,
@@ -96,6 +99,74 @@ This also included creating the `../examples/` path which does not exists by def
 The **evidence files** are located in
 
 `SIFTER-master/large_scale_v1.0/data/families_data/annotations/*.pli.gz`
+
+## Our try with aphylo data
+
+1. Lookup the families
+
+```
+python sifter_find_families.py --dbpass=[pass] \
+   --ip ../aphylo2/PTHR31682_taxa-3702_proteins.txt \
+   ../aphylo2/family_list.txt
+```
+
+This yields the following output:
+
+
+
+2. Gather family data (not sure what this does)
+
+```
+python sifter_gather_family_data.py --dbpass=[pass] -A \
+   --seq_file ../aphylo2/PTHR12663_taxa-3702.fasta \
+   --hit_file ../aphylo2/PTHR12663_taxa-3702.txt --taxid 3702 ../data/families_data
+```
+
+This is the output:
+
+```
+--------------Reading the input famiy information------------
+
+
+--------------Reading the Pfam hit file------------
+Your queried novel genome has:
+4 sequences
+0 genes in pfam
+0 pfam families
+
+We will run on All 0 Pfam Families of your novel species.
+Number of families to process: 0
+
+
+--------------Reading the species tree data------------
+
+------------Gather the necessary data for families-------------
+-------------------Data gadering is Done----------------------
+
+Next step is to run 'sifter_prepare.py' to prepares necessary files for your query to run SIFTER on.
+```
+
+3. 
+
+```
+python sifter_prepare.py --dbpass=[pass] \
+   --ip ../aphylo2/PTHR31682_taxa-3702_proteins.txt \
+   ../data/families_data/ ../aphylo2/
+```
+
+4. Run sifter
+
+```
+python sifter_run_cv.py ../aphylo2 ../aphylo2/results
+```
+
+5. Extract the data
+
+```
+python sifter_extract.py --dbpass=[pass] \
+   --ip ../aphylo2/PTHR31682_taxa-3702_proteins.txt \
+   ../aphylo2/results/ ../aphylo2/preds.txt
+```
 
 ## Manual
 

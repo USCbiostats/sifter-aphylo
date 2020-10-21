@@ -1,0 +1,9 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+O70167	568	646	562	665	PF00792.24	PI3K_C2	Domain	7	85	140	45.5	6.6e-12	1	CL0154
+O70167	724	872	705	888	PF00613.20	PI3Ka	Family	18	167	185	95.8	2e-27	1	CL0020
+O70167	977	1189	976	1191	PF00454.27	PI3_PI4_kinase	Family	2	248	250	169.6	1e-49	1	CL0016
+O70167	1266	1366	1264	1368	PF00787.24	PX	Domain	3	111	113	52.9	3.2e-14	1	No_clan
+O70167	1403	1501	1402	1501	PF00168.30	C2	Domain	2	103	103	23.4	5.6e-05	1	CL0154

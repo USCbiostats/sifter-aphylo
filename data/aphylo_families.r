@@ -38,17 +38,9 @@ save.image("data/aphylo_families_entries.rda")
 ans <- unique(dat[, .(tree, UniProtKB)])[, .(n=.N), by = tree]
 ans[order(n),] # Selecting one tree with small number of proteins annotated
 
-# Extracting the genes (with full names) associated the tree
-# PTHR10082
-idx <- dat[, which(tree == "PTHR24416")]
-
-sample_trees <- pfam_ids # [idx]
-
-cat(names(sample_trees), sep = "\n")
-
 # Creating the fasta sequences for querying pfamscan ---------------------------
 counter <- 0L
-fasta <- lapply(sample_trees, function(i) {
+fasta <- lapply(pfam_ids, function(i) {
   
   counter <<- counter + 1L
   
@@ -88,17 +80,94 @@ saveRDS(pfamscan_results, "data/aphylo_families_pfamscan.rds")
 
 # ------------------------------------------------------------------------------
 
+# Gathering taxas
+pfam_taxa <- lapply(pfam_ids, function(i) {
+  a <- list(
+    tax_id = attr(i$pfam$entry$taxonomy, "tax_id"),
+    id     = attr(i$pfam$entry, "id")
+  )
+  if (!length(a$tax_id))
+    a$tax_id <- NA_character_
+  if (!length(a$id))
+    a$id <- NA_character_
+  a
+})
+
+pfam_taxa <- data.table(
+  uniprot = names(pfam_taxa),
+  taxa    = sapply(pfam_taxa, "[[", "tax_id"),
+  id      = sapply(pfam_taxa, "[[", "id")
+)
+pfam_taxa <- pfam_taxa[, .(taxa = unique(taxa)), by = .(uniprot, id)]
+pfam_taxa[, n := sapply(taxa, length)]
+pfam_taxa[n == 0, taxa := NA_character_]
+pfam_taxa[, n := NULL]
+
+# When unlisting, this should work OK
+stopifnot(length(unlist(pfam_taxa$taxa)) == nrow(pfam_taxa))
+pfam_taxa[, taxa := unlist(taxa)]
+
+pfam_taxa <- merge(
+  x = dat,
+  y = pfam_taxa,
+  by.x = "UniProtKB", by.y = "uniprot",
+  all.x = TRUE, all.y = FALSE
+)
+
+# Making sure everything merged properly
+stopifnot(nrow(pfam_taxa) == nrow(dat))
+dat <- copy(pfam_taxa)
+
+pfam_taxa <- pfam_taxa[,.(tree, taxa)]
+pfam_taxa <- unique(pfam_taxa)
+pfam_taxa[is.na(taxa), ]
+#         tree taxa
+# 1: PTHR11256 <NA>
+# 2: PTHR10125 <NA>
+
+pfam_taxa <- pfam_taxa[!is.na(taxa)] # 497 queries
+
 # We will create files in aphylo_families, and the files will be
 # indexed by the panther families.
-families <- dat[, .N, by = tree][order(N),] # PTHR10438
+families <- split(pfam_taxa, 1:nrow(pfam_taxa))
 
-for (f in as.character(families$tree)) {
-  proteins <- dat[tree == f, as.character(UniProtKB)]
+for (f in families) {
+  proteins <- dat[tree == f$tree & taxa == f$taxa, as.character(UniProtKB)]
+  ids      <- dat[tree == f$tree & taxa == f$taxa, as.character(id)]
   
-  # Filtering the results
-  proteins <- pfamscan_results[pfamscan_results$seq$name %in% proteins,]
+  # Writing the list of HMM scans
+  tmp <- pfamscan_results[pfamscan_results$seq$name %in% proteins,]
+  if (nrow(tmp) == 0) {
+    message(
+      sprintf(
+        "The family %s (taxid %s) has no rows in pfamscan.",
+        f$tree, f$taxa
+    ))
+    next
+  }
+  
+  # Writing the sequences
+  fasta_f <- fasta[names(fasta) %in% proteins]
+  fasta_f <- paste(fasta_f, collapse = "\n")
+  cat(fasta_f, file = sprintf("data/aphylo_families/%s_taxa-%s.fasta", f$tree, f$taxa))
+  
+
   as_tblout(
-    proteins,
-    output = sprintf("data/aphylo_families/pfam_%s.txt", f)
+    tmp,
+    output = sprintf("data/aphylo_families/%s_taxa-%s.txt", f$tree, f$taxa)
+    )
+  
+  # Writing the protein list
+  cat(
+    ids, sep = "\n",
+    file = sprintf("data/aphylo_families/%s_taxa-%s_proteins.txt", f$tree, f$taxa)
     )
 }
+
+# The family PTHR12663 (taxid 3702) has no rows in pfamscan.
+# The family PTHR11132 (taxid 559292) has no rows in pfamscan.
+# The family PTHR12663 (taxid 559292) has no rows in pfamscan.
+# The family PTHR11132 (taxid 237561) has no rows in pfamscan.
+# The family PTHR23235 (taxid 7955) has no rows in pfamscan.
+# The family PTHR10730 (taxid 10090) has no rows in pfamscan.
+# The family PTHR11132 (taxid 284812) has no rows in pfamscan.

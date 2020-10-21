@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P15207	6	445	6	445	PF02166.16	Androgen_recep	Family	1	484	484	765.8	1.9e-230	1	No_clan
+P15207	541	608	540	609	PF00105.18	zf-C4	Domain	2	69	70	93.3	9.2e-27	1	CL0167
+P15207	677	861	672	863	PF00104.30	Hormone_recep	Domain	6	202	207	109.2	2e-31	1	No_clan

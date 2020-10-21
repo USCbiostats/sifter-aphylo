@@ -1,0 +1,18 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P54315	18	353	18	353	PF00151.19	Lipase	Domain	1	336	336	512.2	6.7e-154	1	CL0028
+P54315	358	460	358	465	PF01477.23	PLAT	Domain	1	108	117	58.3	1.1e-15	1	CL0321
+P54317	18	354	18	354	PF00151.19	Lipase	Domain	1	336	336	535.0	7.7e-161	1	CL0028
+P54317	359	460	359	465	PF01477.23	PLAT	Domain	1	106	117	67.0	2.1e-18	1	CL0321
+P16233	17	352	17	352	PF00151.19	Lipase	Domain	1	336	336	528.9	5.7e-159	1	CL0028
+P16233	357	456	357	463	PF01477.23	PLAT	Domain	1	106	117	57.5	1.8e-15	1	CL0321
+Q6XZB0	38	333	7	334	PF00151.19	Lipase	Domain	33	335	336	287.4	1.5e-85	1	CL0028
+Q8WWY8	34	326	8	326	PF00151.19	Lipase	Domain	31	336	336	274.2	1.7e-81	1	CL0028
+P11150	21	349	15	349	PF00151.19	Lipase	Domain	9	336	336	434.5	2.8e-130	1	CL0028
+P11150	354	485	354	485	PF01477.23	PLAT	Domain	1	117	117	87.1	1.2e-24	1	CL0321
+P06858	30	338	17	338	PF00151.19	Lipase	Domain	29	336	336	435.7	1.2e-130	1	CL0028
+P06858	343	462	343	463	PF01477.23	PLAT	Domain	1	116	117	89.8	1.8e-25	1	CL0321
+Q9Y5X9	34	344	13	344	PF00151.19	Lipase	Domain	25	336	336	360.4	1e-107	1	CL0028
+Q9Y5X9	349	481	349	481	PF01477.23	PLAT	Domain	1	117	117	92.2	3.1e-26	1	CL0321

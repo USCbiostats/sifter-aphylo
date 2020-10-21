@@ -1,0 +1,19 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+O15033	54	154	54	155	PF00630.19	Filamin	Domain	1	102	103	33.2	7.1e-08	1	CL0159
+O15033	513	822	512	823	PF00632.25	HECT	Domain	2	306	307	266.1	4.5e-79	1	CL0552
+Q76N89	65	183	65	184	PF16562.5	HECW_N	Domain	1	119	120	196.4	9.6e-59	1	CL0159
+Q76N89	210	313	206	319	PF00168.30	C2	Domain	6	96	103	42.8	5.2e-11	1	CL0154
+Q76N89	831	860	831	860	PF00397.26	WW	Domain	1	31	31	38.4	9.3e-10	1	CL0680
+Q76N89	948	1014	948	1014	PF18436.1	HECW1_helix	Domain	1	67	67	117.8	1.6e-34	1	No_clan
+Q76N89	1302	1606	1301	1606	PF00632.25	HECT	Domain	2	307	307	355.3	3.1e-106	1	CL0552
+Q7Z6Z7	90	367	88	368	PF06012.12	DUF908	Family	3	357	358	95.4	4.5e-27	1	No_clan
+Q7Z6Z7	430	814	430	814	PF06025.12	DUF913	Family	1	368	368	385.3	2.6e-115	1	No_clan
+Q7Z6Z7	1318	1352	1317	1352	PF00627.31	UBA	Domain	2	37	37	28.6	9.6e-07	1	CL0214
+Q7Z6Z7	1617	1678	1616	1679	PF02825.20	WWE	Family	4	66	68	48.1	1.3e-12	1	No_clan
+Q7Z6Z7	2962	2990	2960	2992	PF14377.6	UBM	Repeat	3	31	35	38.7	4.1e-10	1	No_clan
+Q7Z6Z7	3011	3043	3009	3043	PF14377.6	UBM	Repeat	3	35	35	42.2	3.3e-11	1	No_clan
+Q7Z6Z7	3051	3082	3048	3083	PF14377.6	UBM	Repeat	4	34	35	29.5	3.4e-07	1	No_clan
+Q7Z6Z7	4069	4373	4067	4374	PF00632.25	HECT	Domain	3	306	307	315.0	6e-94	1	CL0552

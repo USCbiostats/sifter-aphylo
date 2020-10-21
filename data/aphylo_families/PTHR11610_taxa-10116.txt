@@ -1,0 +1,14 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P54316	18	353	18	353	PF00151.19	Lipase	Domain	1	336	336	507.7	1.6e-152	1	CL0028
+P54316	358	459	358	464	PF01477.23	PLAT	Domain	1	107	117	54.4	1.7e-14	1	CL0321
+P54318	17	353	17	353	PF00151.19	Lipase	Domain	1	336	336	548.5	6e-165	1	CL0028
+P54318	358	459	358	465	PF01477.23	PLAT	Domain	1	106	117	60.9	1.6e-16	1	CL0321
+P27657	17	352	17	352	PF00151.19	Lipase	Domain	1	336	336	547.2	1.5e-164	1	CL0028
+P27657	357	456	357	463	PF01477.23	PLAT	Domain	1	106	117	58.1	1.2e-15	1	CL0321
+P07867	22	350	14	350	PF00151.19	Lipase	Domain	11	336	336	457.2	3.6e-137	1	CL0028
+P07867	355	486	355	486	PF01477.23	PLAT	Domain	1	117	117	74.7	8.5e-21	1	CL0321
+Q8VBX1	47	346	28	346	PF00151.19	Lipase	Domain	34	336	336	350.6	9.6e-105	1	CL0028
+Q8VBX1	351	482	351	483	PF01477.23	PLAT	Domain	1	116	117	88.4	4.9e-25	1	CL0321

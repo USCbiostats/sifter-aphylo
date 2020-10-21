@@ -1,0 +1,8 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P33886	322	579	320	579	PF00069.25	Pkinase	Domain	3	264	264	199.0	8.7e-59	1	CL0016
+P50527	147	204	146	204	PF00786.28	PBD	Domain	2	59	59	81.7	3.5e-23	1	No_clan
+P50527	386	637	386	637	PF00069.25	Pkinase	Domain	1	264	264	248.6	6.4e-74	1	CL0016
+O75011	10	264	10	264	PF00069.25	Pkinase	Domain	1	264	264	205.8	7.5e-61	1	CL0016

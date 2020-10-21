@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+O95057	9	165	9	169	PF00071.22	Ras	Domain	1	157	162	162.1	8e-48	1	CL0023
+Q96HU8	10	167	9	171	PF00071.22	Ras	Domain	2	158	162	165.8	5.6e-49	1	CL0023
+P01112	5	164	5	165	PF00071.22	Ras	Domain	1	161	162	197.4	1.1e-58	1	CL0023

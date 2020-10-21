@@ -1,0 +1,18 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q96P63	7	405	6	405	PF00079.20	Serpin	Domain	2	371	371	447.7	3.8e-134	1	No_clan
+Q9UIV8	8	391	6	391	PF00079.20	Serpin	Domain	3	371	371	427.1	6.7e-128	1	No_clan
+P48594	7	390	6	390	PF00079.20	Serpin	Domain	2	371	371	454.6	3.1e-136	1	No_clan
+P50452	7	374	6	374	PF00079.20	Serpin	Domain	2	371	371	440.5	5.8e-132	1	No_clan
+P50453	8	376	6	376	PF00079.20	Serpin	Domain	3	371	371	432.9	1.1e-129	1	No_clan
+P35237	7	376	6	376	PF00079.20	Serpin	Domain	2	371	371	437.3	5.5e-131	1	No_clan
+Q86WD7	48	414	46	414	PF00079.20	Serpin	Domain	3	371	371	389.2	2.2e-116	1	No_clan
+P05154	45	406	43	406	PF00079.20	Serpin	Domain	3	371	371	384.7	5.1e-115	1	No_clan
+P01009	55	415	52	415	PF00079.20	Serpin	Domain	4	371	371	397.2	8.2e-119	1	No_clan
+P07093	34	398	31	398	PF00079.20	Serpin	Domain	6	371	371	356.5	2e-106	1	No_clan
+P05121	36	402	33	402	PF00079.20	Serpin	Domain	4	371	371	364.7	6.2e-109	1	No_clan
+P05155	146	498	144	498	PF00079.20	Serpin	Domain	3	371	371	263.8	2.9e-78	1	No_clan
+Q99574	25	397	24	397	PF00079.20	Serpin	Domain	2	371	371	384.7	5.1e-115	1	No_clan
+P08697	86	436	84	436	PF00079.20	Serpin	Domain	3	371	371	298.2	1e-88	1	No_clan

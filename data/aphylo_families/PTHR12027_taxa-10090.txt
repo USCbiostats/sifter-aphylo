@@ -1,0 +1,17 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P24383	41	349	40	349	PF00110.19	wnt	Family	2	308	308	411.6	2.4e-123	1	No_clan
+P28047	41	349	40	349	PF00110.19	wnt	Family	2	308	308	416.7	7e-125	1	No_clan
+O35468	61	358	58	358	PF00110.19	wnt	Family	4	308	308	326.1	2.6e-97	1	No_clan
+Q8R5M2	63	364	60	364	PF00110.19	wnt	Family	4	308	308	323.7	1.4e-96	1	No_clan
+P21552	44	349	43	349	PF00110.19	wnt	Family	2	308	308	408.6	2e-122	1	No_clan
+O70283	73	378	72	378	PF00110.19	wnt	Family	2	308	308	405.3	2.1e-121	1	No_clan
+P04426	61	369	60	370	PF00110.19	wnt	Family	2	307	308	414.2	3.9e-124	1	No_clan
+P48615	48	354	47	354	PF00110.19	wnt	Family	2	308	308	356.7	1.3e-106	1	No_clan
+P22725	72	380	71	380	PF00110.19	wnt	Family	2	308	308	408.1	2.9e-122	1	No_clan
+P48614	51	389	50	389	PF00110.19	wnt	Family	2	308	308	386.5	1.1e-115	1	No_clan
+P22724	46	351	45	351	PF00110.19	wnt	Family	2	308	308	430.3	5e-129	1	No_clan
+P17553	48	355	47	355	PF00110.19	wnt	Family	2	308	308	415.8	1.3e-124	1	No_clan
+P27467	45	352	44	352	PF00110.19	wnt	Family	2	308	308	409.9	8.1e-123	1	No_clan

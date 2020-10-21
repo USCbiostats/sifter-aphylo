@@ -1,0 +1,6 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q13616	21	658	21	670	PF00888.22	Cullin	Family	1	606	618	672.7	5.7e-202	1	No_clan
+Q13616	706	766	706	768	PF10557.9	Cullin_Nedd8	Domain	1	61	63	95.3	1.7e-27	1	CL0123

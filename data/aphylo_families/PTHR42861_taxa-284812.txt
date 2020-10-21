@@ -1,0 +1,9 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P22189	16	78	12	78	PF00690.26	Cation_ATPase_N	Domain	7	69	69	56.3	2e-15	1	No_clan
+P22189	118	236	117	271	PF00122.20	E1-E2_ATPase	Family	2	104	181	98.6	2.8e-28	1	No_clan
+P22189	276	346	266	346	PF00122.20	E1-E2_ATPase	Family	109	181	181	31.2	1.5e-07	1	No_clan
+P22189	445	532	445	533	PF13246.6	Cation_ATPase	Family	1	90	91	76.3	1.4e-21	1	CL0137
+P22189	792	993	790	994	PF00689.21	Cation_ATPase_C	Family	3	181	182	97.9	5.7e-28	1	No_clan

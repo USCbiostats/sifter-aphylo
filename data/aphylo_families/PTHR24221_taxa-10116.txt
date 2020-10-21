@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+O70595	6	255	6	255	PF16185.5	MTABC_N	Family	1	242	242	262.0	4.9e-78	1	No_clan
+O70595	275	544	265	544	PF00664.23	ABC_membrane	Family	11	274	274	111.4	6e-32	1	CL0241
+O70595	606	755	606	755	PF00005.27	ABC_tran	Domain	1	137	137	120.7	6.1e-35	1	CL0023

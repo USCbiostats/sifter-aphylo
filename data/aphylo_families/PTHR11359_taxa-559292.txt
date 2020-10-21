@@ -1,0 +1,8 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P38150	275	744	275	745	PF00962.22	A_deaminase	Domain	1	327	328	103.1	1.9e-29	1	CL0034
+P40361	337	624	337	642	PF00962.22	A_deaminase	Domain	1	169	328	32.2	6.7e-08	1	CL0034
+P40361	723	826	716	827	PF00962.22	A_deaminase	Domain	228	327	328	47.8	1.2e-12	1	CL0034
+P15274	355	761	355	761	PF00962.22	A_deaminase	Domain	1	328	328	445.8	9.8e-134	1	CL0034

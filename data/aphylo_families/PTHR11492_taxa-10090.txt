@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q02780	33	69	31	69	PF10524.9	NfI_DNAbd_pre-N	Family	5	41	41	85.3	1.8e-24	1	No_clan
+Q02780	92	193	91	195	PF03165.16	MH1	Domain	2	101	103	45.9	5.1e-12	1	CL0263
+Q02780	237	531	237	531	PF00859.18	CTF_NFI	Family	1	293	293	429.6	8.4e-129	1	No_clan

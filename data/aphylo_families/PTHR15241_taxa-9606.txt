@@ -1,0 +1,15 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P19338	309	377	309	377	PF00076.22	RRM_1	Domain	1	70	70	29.7	4.2e-07	1	CL0221
+P19338	398	459	395	460	PF00076.22	RRM_1	Domain	4	69	70	52.4	3.3e-14	1	CL0221
+P19338	488	554	488	554	PF00076.22	RRM_1	Domain	1	70	70	57.4	9.1e-16	1	CL0221
+P19338	574	640	574	641	PF00076.22	RRM_1	Domain	1	69	70	60.7	8.9e-17	1	CL0221
+Q9NW13	6	65	6	74	PF00076.22	RRM_1	Domain	1	59	70	52.0	4.7e-14	1	CL0221
+Q9NW13	116	184	116	185	PF00076.22	RRM_1	Domain	1	69	70	66.5	1.4e-18	1	CL0221
+Q9NW13	337	394	337	410	PF00076.22	RRM_1	Domain	1	57	70	44.7	8.7e-12	1	CL0221
+P98179	8	78	8	78	PF00076.22	RRM_1	Domain	1	70	70	84.8	2.6e-24	1	CL0221
+Q14011	8	78	8	78	PF00076.22	RRM_1	Domain	1	70	70	89.7	8e-26	1	CL0221
+Q76FK4	10	80	10	83	PF00076.22	RRM_1	Domain	1	67	70	28.2	1.2e-06	1	CL0221
+Q13595	123	191	121	191	PF00076.22	RRM_1	Domain	3	70	70	69.6	1.4e-19	1	CL0221

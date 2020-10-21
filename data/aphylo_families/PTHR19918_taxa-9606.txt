@@ -1,0 +1,9 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q12834	223	278	218	279	PF12894.7	ANAPC4_WD40	Repeat	35	91	92	28.5	1.4e-06	1	CL0186
+Q12834	301	336	299	336	PF00400.32	WD40	Repeat	3	37	38	28.0	2.6e-06	1	CL0186
+Q12834	346	386	345	386	PF00400.32	WD40	Repeat	2	38	38	23.2	8.6e-05	1	CL0186
+Q12834	391	429	390	429	PF00400.32	WD40	Repeat	2	38	38	13.6	0.093	1	CL0186
+Q12834	436	470	433	471	PF00400.32	WD40	Repeat	4	37	38	24.2	4.2e-05	1	CL0186

@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q9VMT1	81	166	81	167	PF01064.23	Activin_recp	Domain	1	84	85	60.0	3.7e-16	1	CL0117
+Q9VMT1	242	264	240	264	PF08515.12	TGF_beta_GS	Family	4	28	28	42.5	3.2e-11	1	No_clan
+Q9VMT1	268	556	266	558	PF00069.25	Pkinase	Domain	3	259	264	129.3	1.6e-37	1	CL0016

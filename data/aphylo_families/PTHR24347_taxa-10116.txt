@@ -1,0 +1,16 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P11275	13	271	13	271	PF00069.25	Pkinase	Domain	1	264	264	252.0	6e-75	1	CL0016
+P11275	346	473	346	473	PF08332.10	CaMKII_AD	Domain	1	128	128	217.2	6.1e-65	1	CL0051
+P11730	14	272	14	272	PF00069.25	Pkinase	Domain	1	264	264	250.6	1.6e-74	1	CL0016
+P11730	395	522	395	522	PF08332.10	CaMKII_AD	Domain	1	128	128	200.6	8.1e-60	1	CL0051
+P08413	14	272	14	272	PF00069.25	Pkinase	Domain	1	264	264	246.8	2.3e-73	1	CL0016
+P08413	410	537	410	537	PF08332.10	CaMKII_AD	Domain	1	128	128	196.0	2.1e-58	1	CL0051
+P15791	14	272	14	272	PF00069.25	Pkinase	Domain	1	264	264	252.6	4e-75	1	CL0016
+P15791	380	507	380	507	PF08332.10	CaMKII_AD	Domain	1	128	128	199.2	2.1e-59	1	CL0051
+E9PT87	484	737	482	737	PF00069.25	Pkinase	Domain	3	264	264	241.9	7.4e-72	1	CL0016
+O70150	15	270	15	270	PF00069.25	Pkinase	Domain	1	264	264	254.2	1.3e-75	1	CL0016
+Q7TNJ7	26	277	23	277	PF00069.25	Pkinase	Domain	4	264	264	265.7	3.9e-79	1	CL0016
+Q63450	22	276	20	276	PF00069.25	Pkinase	Domain	3	264	264	261.6	7.2e-78	1	CL0016

@@ -1,0 +1,17 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q14432	821	1017	793	1022	PF00233.19	PDEase_I	Domain	27	224	238	203.8	3.2e-60	1	CL0237
+Q13370	805	1004	796	1009	PF00233.19	PDEase_I	Domain	26	224	238	203.9	3e-60	1	CL0237
+Q01064	77	137	77	137	PF08499.12	PDEase_I_N	Family	1	61	61	105.7	7.9e-31	1	No_clan
+Q01064	222	449	222	450	PF00233.19	PDEase_I	Domain	1	235	238	277.3	1.1e-82	1	CL0237
+Q08499	223	339	223	339	PF18100.1	PDE4_UCR	Domain	1	119	119	190.0	1.7e-56	1	No_clan
+Q08499	461	702	461	702	PF00233.19	PDEase_I	Domain	1	238	238	308.8	2.8e-92	1	CL0237
+Q07343	166	281	166	281	PF18100.1	PDE4_UCR	Domain	1	119	119	192.0	4e-57	1	No_clan
+Q07343	405	646	405	646	PF00233.19	PDEase_I	Domain	1	238	238	310.2	1e-92	1	CL0237
+P27815	178	293	178	293	PF18100.1	PDE4_UCR	Domain	1	119	119	180.3	1.7e-53	1	No_clan
+P27815	432	673	432	673	PF00233.19	PDEase_I	Domain	1	238	238	312.7	1.7e-93	1	CL0237
+O00408	241	369	239	378	PF13185.6	GAF_2	Domain	3	129	138	31.7	1.6e-07	1	CL0161
+O00408	409	548	409	548	PF01590.26	GAF	Domain	1	133	133	58.0	1.5e-15	1	CL0161
+O00408	655	887	655	889	PF00233.19	PDEase_I	Domain	1	236	238	259.7	2.8e-77	1	CL0237

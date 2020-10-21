@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P40387	20	482	19	483	PF00982.21	Glyco_transf_20	Family	2	473	474	673.6	1.4e-202	1	CL0113
+P78875	32	535	30	536	PF00982.21	Glyco_transf_20	Family	3	473	474	594.3	1.5e-178	1	CL0113
+P78875	568	783	568	801	PF02358.16	Trehalose_PPase	Family	1	216	233	279.8	1.2e-83	1	CL0137

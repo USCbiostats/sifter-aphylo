@@ -1,0 +1,12 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+Q8N608	133	499	133	500	PF00930.21	DPPIV_N	Family	1	353	354	373.2	1e-111	1	CL0186
+Q8N608	582	783	580	784	PF00326.21	Peptidase_S9	Domain	3	211	212	159.8	6e-47	1	CL0028
+P42658	195	561	195	561	PF00930.21	DPPIV_N	Family	1	354	354	371.4	3.4e-111	1	CL0186
+P42658	643	848	641	850	PF00326.21	Peptidase_S9	Domain	3	210	212	133.5	7.2e-39	1	CL0028
+Q12884	106	472	106	473	PF00930.21	DPPIV_N	Family	1	353	354	339.1	2.3e-101	1	CL0186
+Q12884	555	757	553	759	PF00326.21	Peptidase_S9	Domain	3	210	212	184.4	1.9e-54	1	CL0028
+P27487	108	478	108	479	PF00930.21	DPPIV_N	Family	1	353	354	361.5	3.6e-108	1	CL0186
+P27487	561	763	559	765	PF00326.21	Peptidase_S9	Domain	3	209	212	197.8	1.4e-58	1	CL0028

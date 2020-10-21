@@ -1,0 +1,7 @@
+# This is a simulated scan file. The original call used the json output
+# which holds more information. This is just an attempt to get the same output.
+# <seq id> <alignment start> <alignment end> <envelope start> <envelope end> <hmm acc> <hmm name> <type> <hmm start> <hmm end> <hmm length> <bit score> <E-value> <significance> <clan> 
+
+P37913	286	462	286	462	PF04675.14	DNA_ligase_A_N	Family	1	173	173	134.1	6.3e-39	1	No_clan
+P37913	540	744	540	744	PF01068.21	DNA_ligase_A_M	Domain	1	204	204	224.7	8.9e-67	1	CL0078
+P37913	769	880	769	880	PF04679.15	DNA_ligase_A_C	Family	1	99	99	86.6	1.4e-24	1	CL0021
