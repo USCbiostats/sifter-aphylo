@@ -54,6 +54,20 @@ pred_auc
 # Rates can be accessed via the $ operator
 plot(pred_auc)
 
+# Measuring correct (TPR) at specificity (TNR) ~ 99%
+(pred_auc$tpr)[which.min(abs(pred_auc$tnr - .99))] # 0.3684211
+
+ans_alt <- ans
+ans_alt$tip.annotation[ids,][ans_alt$tip.annotation[ids,] == 9] <- 0
+pred_alt <- predict(model_aphylo, newdata = ans_alt, ids = ids, loo = TRUE)
+
+pred_table_alt <- cbind(
+  predicted = as.vector(pred_alt[ids,]),
+  labels    = as.vector(ans_alt$tip.annotation[ids,])
+)
+
+pred_auc_alt <- auc(pred = pred_table_alt[,"predicted"], labels = pred_table_alt[, "labels"])
+
 # Computing accuracy a la SIFTER -----------------------------------------------
 
 # Directly from the paper:
@@ -64,19 +78,61 @@ plot(pred_auc)
 #   ranked predictions, we counted the protein as having an accurate
 # prediction when the intersection of the two sets was not empty. 
 
-acc_at_least_one <- lapply(ids, function(i) {
-  top_pred <- which(abs(pred[i,] - max(pred[i,])) < 1e-5)
-  true_ann <- which(ans$tip.annotation[i,] == 1)
-  data.frame(
-    pred = paste(top_pred, collapse=","),
-    true = paste(true_ann, collapse=","),
-    accurate = ifelse(length(intersect(top_pred, true_ann)), 1, 0)
-  )
-})
-acc_at_least_one <- do.call(rbind, acc_at_least_one)
-rownames(acc_at_least_one) <- rownames(pred[ids,])
-table(acc_at_least_one$accurate)
-#  0  1 
-# 10 23
+acc_at_least_one <- accuracy_sifter(
+  pred = pred[ids, ],
+  lab  = ans$tip.annotation[ids,],
+  tol  = 1e-15,
+  highlight = "\\cellcolor{blue!25}\\textbf{%s}"
+)
 
-acc_at_least_one
+acc_at_least_one_alt <- accuracy_sifter(
+  pred = pred_alt[ids, ],
+  lab  = ans_alt$tip.annotation[ids,],
+  tol  = 1e-15,
+  highlight = "\\cellcolor{blue!25}\\textbf{%s}"
+)
+
+# Saving data
+saveRDS(
+  list(
+    aucs       = pred_auc,
+    aucs_alt   = pred_auc_alt,
+    pred       = pred,
+    pred_table = pred_table,
+    accuracy   = acc_at_least_one,
+    accuracy_alt = acc_at_least_one_alt
+  ),
+  file = "data/deaminase.rds"
+)
+
+
+# Writing table ----------------------------------------------------------------
+acc_at_least_one$Gene <- gsub("[_]", "\\\\_", acc_at_least_one$Gene)
+acc_at_least_one$Predicted <- gsub(",", ", ", acc_at_least_one$Predicted)
+acc_at_least_one$Observed <- gsub(",", ", ", acc_at_least_one$Observed)
+
+fn <- "data/deaminase.tex"
+if (file.exists(fn))
+  file.remove(fn)
+
+cat("\\begin{table}[!htbp]
+    \\begin{tabular}{lm{.2\\linewidth}<\\raggedleft m{.2\\linewidth}<\\raggedleft}\\toprule\n",
+    file = fn)
+
+write.table(
+  acc_at_least_one[,-4], sep = "&", eol = "\\\\\n",
+  quote = FALSE, row.names = FALSE, file = fn, append = TRUE
+)
+cat(
+  "\\bottomrule\n\\end{tabular}",
+  sprintf(
+    "\\caption{\\label{tab:deaminase}List of predicted vs experimental annotations. GO terms that are
+    consistent with true annotations. In this case, this family included a total
+    of %i possible functions. aphylo correctly predicted %i of %i proteins.}",
+    ncol(pred), sum(acc_at_least_one$Accuracy), nrow(acc_at_least_one)
+  ),
+  "\\end{table}",
+  file   = fn,
+  append = TRUE,
+  sep    = "\n"
+)
