@@ -9,7 +9,7 @@ sifter_java <- function(
   sifter_args = "--truncation 1 --xvalidation --folds 0",
   keepfiles = TRUE,
   limit_out = 20,
-  timeout   = 10 # 60 * 5
+  timeout   = 60*60
 ) {
   
   message(paste(rep("-", getOption("width", 80)), collapse = ""))
@@ -206,7 +206,9 @@ families <- gsub("\\..+", "", families)
 ans <- vector("list", length(families))
 names(ans) <- families
 
-for (f in families) {
+# Raw predictions
+missing_fams <- sprintf("data/families_data/predictions/%s.rds", families)
+parallel::mclapply(families[which(!file.exists(missing_fams))], function(f) {
   
   fn_out <- sprintf("data/families_data/predictions/%s.rds", f)
   if (file.exists(fn_out)) {
@@ -219,22 +221,40 @@ for (f in families) {
     fam_data = "data/families_data/",
     fn_tree  = sprintf("SIFTER-master/large_scale_v1.0/data/families_data/reconciled_trees/%s_reconciled.xml", f),
     fn_ann   = sprintf("data/families_data/annotations/%s.pli", f),
-    sifter_args = "--truncation 1",
-    timeout  = 120
+    sifter_args = "--truncation 1"
   )
   
   # Saving
   if (tmp_ans$status == 0)
     saveRDS(tmp_ans, fn_out)
   
-}
+  return(tmp_ans$out)
+  
+}, mc.cores = 10L)
 
-# Traying to coerce into a file
-ans_predictions <- lapply(ans, function(a) {
-  if (length(a$predictions))
-    return(data.table::fread(text=a$predictions))
-  return(NULL)
-})
-
-ans_predictions
+# Cross validation predictions
+missing_fams <- sprintf("data/families_data/predictions/%s-xval.rds", families)
+parallel::mclapply(families[which(!file.exists(missing_fams))], function(f) {
+  
+  fn_out <- sprintf("data/families_data/predictions/%s-xval.rds", f)
+  if (file.exists(fn_out)) {
+    message("Family ", f, " already processed.")
+    next
+  }
+  
+  tmp_ans <- sifter_java(
+    fam      = f,
+    fam_data = "data/families_data/",
+    fn_tree  = sprintf("SIFTER-master/large_scale_v1.0/data/families_data/reconciled_trees/%s_reconciled.xml", f),
+    fn_ann   = sprintf("data/families_data/annotations/%s.pli", f),
+    sifter_args = "--truncation 1 --xvalidation --folds 0"
+  )
+  
+  # Saving
+  if (tmp_ans$status == 0)
+    saveRDS(tmp_ans, fn_out)
+  
+  return(tmp_ans$out)
+  
+}, mc.cores = 10L)
 

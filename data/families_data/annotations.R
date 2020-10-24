@@ -16,16 +16,18 @@ trees_with_more_than_2 <- functions_per_tree[n >= 2,]
 # Building the pli files for sifter --------------------------------------------
 
 # Filtering the annotations:
-# - Have at least two functions per tree, and
+# - Have at least two functions per tree (in PFAM, we do that later), and
 # - Are all positive
-pli_data <- dat[tree %in% trees_with_more_than_2$tree & qualifier == 1]
+pli_data <- dat[qualifier == 1]
 
 # Getting the accession and the pfam family
 
 tmp <- lapply(seq_along(pfam_ids), function(i) {
+  # print(i)
   data.table(
-    name = names(pfam_ids)[i],
-    fami = attr(pfam_ids[[i]]$pfam$entry$matches[[1]], "accession")
+    name   = attr(pfam_ids[[i]]$pfam$entry, "id"),
+    number = names(pfam_ids)[i],
+    fami   = unlist(sapply(pfam_ids[[i]]$pfam$entry$matches, attr, which = "accession"))
   )
 })
 
@@ -34,18 +36,20 @@ tmp <- tmp[!is.na(fami)]
 
 pli_data <- merge(
   x = pli_data,
-  y = tmp, by.x = "UniProtKB", by.y = "name",
-  all.x = TRUE, all.y = FALSE
+  y = tmp, by.x = "UniProtKB", by.y = "number",
+  all.x = TRUE, all.y = FALSE, allow.cartesian = TRUE
 )
 pli_data <- pli_data[!is.na(fami)]
+
+unique(pli_data[,.(go,fami)])[, .(n=.N), by = fami][n>1]
 
 # For the family name, I will only keep the Panther name so that way
 # I make sure that 
 
 # Families
-pfam_families <- readLines("data/families_data/annotations_families.txt")
-pfam_families <- pfam_families[!grepl("^#", pfam_families)]
-pli_data <- pli_data[fami %in% pfam_families]
+# pfam_families <- readLines("data/families_data/annotations_families.txt")
+# pfam_families <- pfam_families[!grepl("^#", pfam_families)]
+# pli_data <- pli_data[fami %in% pfam_families]
 
 # # Copying the families' annotations from SIFTER's data
 # all_pfam <- list.files(
@@ -68,12 +72,15 @@ pli_data <- pli_data[fami %in% pfam_families]
 # 
 # PF00001 <- xml2::read_xml("data/families_data/annotations/PF00001.pli")
 
-for (f in unique(pli_data$fami)) {
+families_worth <- unique(pli_data[,.(go,fami)])[, .(n=.N), by = fami][n>1, fami]
+# 60 families
+
+for (f in families_worth) {
   
   # Creating the entire set
   write_pli(
     family_id      = f,
-    protein_name   = as.character(pli_data[fami == f, UniProtKB]),
+    protein_name   = as.character(pli_data[fami == f, name]),
     protein_number = as.character(pli_data[fami == f, UniProtKB]),
     go_number      = gsub("GO:","",as.character(pli_data[fami == f, go])),
     moc            = "EXP",
