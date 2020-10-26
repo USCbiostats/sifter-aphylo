@@ -13,10 +13,10 @@ family_map <- NULL
 run_sifter_on_aphylo <- function(
   fam,
   dbpass,
-  path    = "data/aphylo_families/",
-  sifter  = "SIFTER-master/large_scale_v1.0/scripts/",
+  path     = "data/aphylo_families/",
+  sifter   = "SIFTER-master/large_scale_v1.0/scripts/",
   fam_data = "SIFTER-master/large_scale_v1.0/data/families_data/",
-  timeout = 1
+  timeout  = 1
   ) {
   
   message(paste(rep("-", getOption("width", 80)), collapse = ""))

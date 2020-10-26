@@ -7,15 +7,20 @@ sifter_java <- function(
   fn_sifter = "/home/vegayon@PREVMED.USC.EDU/sifter-aphylo/SIFTER-master/core/sifter2.1.1.jar",
   fn_godb   = "/home/vegayon@PREVMED.USC.EDU/sifter-aphylo/SIFTER-master/large_scale_v1.0/data/goterms.sqlite",
   sifter_args = "--truncation 1 --xvalidation --folds 0",
+  out_dir   = "",
   keepfiles = TRUE,
   limit_out = 20,
-  timeout   = 60*60
+  timeout   = 60*10
 ) {
   
   message(paste(rep("-", getOption("width", 80)), collapse = ""))
   message("Starting to work on Family ", fam, appendLF = FALSE)
   
-  tmp_d <- tempfile(paste0("sifter-", fam))
+  if (out_dir == "")
+    tmp_d <- tempfile(paste0("sifter-", fam))
+  else
+    tmp_d <- out_dir
+  
   dir.create(tmp_d, recursive = TRUE)
   
   message(" in directory ", tmp_d)
@@ -24,8 +29,7 @@ sifter_java <- function(
     on.exit(unlink(tmp_d, recursive = TRUE, force = TRUE))
   
   fn_res <- file.path(tmp_d, "results.txt")
-  dir.create(file.path(tmp_d, "results"))
-  
+
   # Moving the files -------------------------------------------------------------
   if (!file.exists(fn_tree)) {
     R.utils::gunzip(
@@ -82,9 +86,9 @@ sifter_java <- function(
   }
   
   # Building filepaths
-  fn_familyfile <- file.path(tmp_d, "results", paste0("infer-", fam, ".fx"))
-  fn_scale      <- file.path(tmp_d, "results", sprintf("scale-%s.fx", fam))
-  fn_alpha      <- file.path(tmp_d, "results", sprintf("alpha-%s.fx", fam))
+  fn_familyfile <- file.path(tmp_d, paste0("infer-", fam, ".fx"))
+  fn_scale      <- file.path(tmp_d, sprintf("scale-%s.fx", fam))
+  fn_alpha      <- file.path(tmp_d, sprintf("alpha-%s.fx", fam))
   
   write_aux_files(
     nfuns = nfuns, funnames = funnames, fn_familyfile = fn_familyfile,
@@ -200,6 +204,7 @@ sifter_java <- function(
 }
 
 # Running sifter ---------------------------------------------------------------
+
 families <- list.files("data/families_data/annotations/", pattern = "*pli")
 families <- gsub("\\..+", "", families)
 
@@ -207,21 +212,21 @@ ans <- vector("list", length(families))
 names(ans) <- families
 
 # Raw predictions
-missing_fams <- sprintf("data/families_data/predictions/%s.rds", families)
-parallel::mclapply(families[which(!file.exists(missing_fams))], function(f) {
+parallel::mclapply(families, function(f) {
   
-  fn_out <- sprintf("data/families_data/predictions/%s.rds", f)
+  fn_out <- sprintf("data/families_data/prediction_bis/%s.rds", f)
   if (file.exists(fn_out)) {
     message("Family ", f, " already processed.")
     next
   }
   
   tmp_ans <- sifter_java(
-    fam      = f,
-    fam_data = "data/families_data/",
-    fn_tree  = sprintf("SIFTER-master/large_scale_v1.0/data/families_data/reconciled_trees/%s_reconciled.xml", f),
-    fn_ann   = sprintf("data/families_data/annotations/%s.pli", f),
-    sifter_args = "--truncation 1"
+    fam         = f,
+    fam_data    = "data/families_data/",
+    fn_tree     = sprintf("SIFTER-master/large_scale_v1.0/data/families_data/reconciled_trees/%s_reconciled.xml", f),
+    fn_ann      = sprintf("data/families_data/annotations/%s.pli", f),
+    sifter_args = "--truncation 1",
+    out_dir     = sprintf("data/families_data/prediction_bis/%s", f)
   )
   
   # Saving
@@ -233,21 +238,21 @@ parallel::mclapply(families[which(!file.exists(missing_fams))], function(f) {
 }, mc.cores = 10L)
 
 # Cross validation predictions
-missing_fams <- sprintf("data/families_data/predictions/%s-xval.rds", families)
-parallel::mclapply(families[which(!file.exists(missing_fams))], function(f) {
+parallel::mclapply(families, function(f) {
   
-  fn_out <- sprintf("data/families_data/predictions/%s-xval.rds", f)
+  fn_out <- sprintf("data/families_data/prediction_bis/%s-xval.rds", f)
   if (file.exists(fn_out)) {
     message("Family ", f, " already processed.")
     next
   }
   
   tmp_ans <- sifter_java(
-    fam      = f,
-    fam_data = "data/families_data/",
-    fn_tree  = sprintf("SIFTER-master/large_scale_v1.0/data/families_data/reconciled_trees/%s_reconciled.xml", f),
-    fn_ann   = sprintf("data/families_data/annotations/%s.pli", f),
-    sifter_args = "--truncation 1 --xvalidation --folds 0"
+    fam         = f,
+    fam_data    = "data/families_data/",
+    fn_tree     = sprintf("SIFTER-master/large_scale_v1.0/data/families_data/reconciled_trees/%s_reconciled.xml", f),
+    fn_ann      = sprintf("data/families_data/annotations/%s.pli", f),
+    sifter_args = "--truncation 1 --xvalidation --folds 0",
+    out_dir     = sprintf("data/families_data/prediction_bis/%s-xval", f) 
   )
   
   # Saving

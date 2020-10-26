@@ -15,11 +15,6 @@ trees_with_more_than_2 <- functions_per_tree[n >= 2,]
 
 # Building the pli files for sifter --------------------------------------------
 
-# Filtering the annotations:
-# - Have at least two functions per tree (in PFAM, we do that later), and
-# - Are all positive
-pli_data <- dat[qualifier == 1]
-
 # Getting the accession and the pfam family
 
 tmp <- lapply(seq_along(pfam_ids), function(i) {
@@ -35,11 +30,19 @@ tmp <- rbindlist(tmp, fill = TRUE)
 tmp <- tmp[!is.na(fami)]
 
 pli_data <- merge(
-  x = pli_data,
+  x = dat,
   y = tmp, by.x = "UniProtKB", by.y = "number",
   all.x = TRUE, all.y = FALSE, allow.cartesian = TRUE
 )
+
+# Only those that matched a family
 pli_data <- pli_data[!is.na(fami)]
+saveRDS(pli_data, "data/families_data/annotations.rds")
+
+# Filtering the annotations:
+# - Have at least two functions per tree (in PFAM, we do that later), and
+# - Are all positive
+pli_data <- pli_data[qualifier == 1]
 
 unique(pli_data[,.(go,fami)])[, .(n=.N), by = fami][n>1]
 
