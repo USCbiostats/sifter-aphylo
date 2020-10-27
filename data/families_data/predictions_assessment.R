@@ -59,7 +59,8 @@ xval[, score := as.double(score)]
 
 xval[, nfuns := length(unique(term)), by = family]
 xval[, nproteins := length(unique(name)), by=family]
-  
+
+
 # What is under their metric? --------------------------------------------------
 accuracy_sifter <- gsub(
   ".+([0-9]+) out of ([0-9]+).+", "\\1;\\2",
@@ -95,7 +96,6 @@ single_column <- which(
     }) == 1
   )
 predictions <- predictions[-single_column]
-
 
 predictions <- rbindlist(predictions, fill = TRUE)
 
@@ -153,39 +153,31 @@ cbind(missing_proteins)
 
 # Retrieving the training data -------------------------------------------------
 
-# # First, we need to know how each protein is mapped to the families
-# id_map <- lapply(predictions, function(d) d[,.(family, `#Names`)])
-# id_map <- rbindlist(id_map)
-# id_map[, name := gsub("_.+", "", `#Names`)]
-
-# candidate_trees <- readRDS("data-raw/candidate_trees.rds")
-# annotations <- lapply(candidate_trees, function(d) {
-#   rownames(d$tip.annotation) <- d$tree$tip.label
-#   d$tip.annotation
-# })
-# 
-# annotations <- lapply(annotations, function(a) a[a[,1] != 9,,drop=FALSE])
-# annotations <- lapply(annotations, function(a) {
-#   data.table(name = rownames(a), term = colnames(a), value = a[,1])
-# })
-# annotations <- rbindlist(annotations)
-# annotations[, name := gsub(".+=", "", name)]
-# 
-# # Retrieving data
-# annotations_alt <- readRDS("data/families_data/annotations.rds")
-# annotations_alt <- annotations_alt[, .(name = UniProtKB, term = go, value = qualifier)]
-# annotations_alt <- unique(annotations_alt)
-# 
-# # Do these match?
-# do_these_match <- merge(
-#   annotations, annotations_alt,
-#   by.x = c("name", "term"), by.y = c("name", "term"),
-#   all = TRUE)
-
 annotations <- readRDS("data/families_data/annotations.rds")
 setnames(annotations, "qualifier", "value")
+annotations <- unique(annotations[, fami := NULL]) # Don't need this
 
 # Merging the data and computing AUCs! -----------------------------------------
+
+# Since in some cases we have more than tree per protein (multiple hits in pfam)
+# we will keep the best
+xval <- xval[nfuns > 1 & nproteins > 1]
+xval <- merge(
+  xval, 
+  annotations[, .(term = go, name, value)],
+  by    = c("term", "name"),
+  all.x = TRUE,
+  all.y = FALSE
+)
+xval <- xval[!is.na(value)]
+
+xval[, smallest := abs(score - value), by = .(term, name)]
+xval[, smallest := which.min(smallest), by = .(term, name)]
+xval[, within_id := 1:.N, by = .(term, name)]
+
+xval <- xval[smallest == within_id]
+xval[, c("smallest", "within_id", "value") := NULL]
+
 annotations_predictions <- merge(
   x = annotations, 
   y = xval[nfuns > 1 & nproteins > 1],
@@ -243,5 +235,27 @@ legend(
   bty = "n"
   )
 
-with(annotations_predictions, auc(score, value))
-with(annotations_predictions, auc(score_aphylo, value))
+
+auc_aphylo <- with(annotations_predictions, auc(score_aphylo, value, nc = 100000))
+auc_sifter <- with(annotations_predictions, auc(score, value, nc = 100000))
+
+cols <- c("steelblue", "tomato")
+graphics.off()
+pdf("data/families_data/predictions_assessment.pdf", width = 7, height = 6)
+plot(auc_aphylo, lty = 1, lwd = 1.75, col = cols[1])
+with(auc_sifter, lines(x = fpr, y = tpr, lty = 2, lwd = 1.75, col = cols[2]))
+legend(
+  "bottomright",
+  lty = 1:2,
+  legend = sprintf(
+    "%s AUC: %.2f; MAE: %.2f",
+    c("aphylo", "SIFTER"),
+    c(auc_aphylo$auc, auc_sifter$auc),
+    with(annotations_predictions, c(mean(abs(value - score_aphylo)), mean(abs(value - score))))
+    ),
+  col = cols,
+  bty = "n",
+  lwd = 1.75,
+  title = "Algorithm"
+  )
+dev.off()
