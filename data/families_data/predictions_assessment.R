@@ -6,18 +6,14 @@ fn_predictions <- list.files("data/families_data/predictions", pattern = "*val*"
 out            <- lapply(fn_predictions, readRDS)
 names(out)     <- gsub(".+predictions/PF([0-9]+)-xval\\.rds$", "PF\\1", fn_predictions)
 
-fn_pred_noxval <- list.files("data/families_data/predictions", pattern = "*.rds", full.names = TRUE)
-fn_pred_noxval <- fn_pred_noxval[grepl("PF[0-9]+\\.rds", fn_pred_noxval)]
-out_no_xval    <- lapply(fn_pred_noxval, readRDS)
-names(out_no_xval) <- gsub(".+predictions/PF([0-9]+)\\.rds$", "PF\\1",fn_pred_noxval)
+# How much time? 110
+sum(sapply(out, function(o) {
+  (o$time1 - o$time0)[3]
+}))/60
 
-# Are the cross validated too different? ---------------------------------------
-common <- intersect(names(out), names(out_no_xval))
-
-# Did the analysis ran with enough information? --------------------------------
-proteins <- lapply(names(out), function(i) {
-  read_pli(sprintf("data/families_data/annotations/%s.pli", i))
-})
+# How many were missed?
+all_fams <- gsub("\\..+", "", list.files("data/families_data/annotations/"))
+all_fams[!all_fams %in% names(out)]
 
 # Was there any cross validation? ----------------------------------------------
 xval <- lapply(out, function(i) i$out[grepl("^x-val", i$out)])
@@ -41,7 +37,11 @@ for (i in seq_along(xval)) {
 
 xval <- xval[valid_xval]
 xval <- lapply(names(xval), function(f) {
-  data.table(family = f, xval[[f]])
+  data.table(
+    family  = f,
+    elapsed = (out[[f]]$time1 - out[[f]]$time0)[3],
+    xval[[f]]
+    )
 })
 xval <- rbindlist(xval, fill = TRUE)
 xval$`#Names` <- toupper(xval$`#Names`)
@@ -49,7 +49,7 @@ xval$`#Names` <- toupper(xval$`#Names`)
 # Reshaping
 xval <- melt(
   xval,
-  id            = 1:2,
+  id            = 1:3,
   value.name    = "score",
   variable.name = "term"
 )
@@ -80,76 +80,38 @@ colSums(as.matrix(accuracy_sifter[,-1]))
 # correct   total ~ 0.43 %
 #     185     426 
 
-# Retrieving the predictions ---------------------------------------------------
-predictions <- lapply(out, "[[", "predictions")
-predictions <- lapply(names(predictions), function(f) {
-  data.table(family = f, predictions[[f]])
-})
-
-names(predictions) <- names(out)
-
-# PF00754 has two columns, but the second column has only missing values
-single_column <- which(
-  sapply(predictions, function(i) any(is.na(i))) |
-    sapply(predictions, function(p) {
-      sum(grepl("^GO[:]",colnames(p)))
-    }) == 1
-  )
-predictions <- predictions[-single_column]
-
-predictions <- rbindlist(predictions, fill = TRUE)
-
-# Reshaping
-predictions <- melt(
-  predictions,
-  id            = 1:2,
-  value.name    = "score",
-  variable.name = "term"
-  )
-predictions <- predictions[!is.na(score)]
-predictions[, name:=gsub("_.+", "", `#Names`)]
-
-# How many per family
-predictions[, nfuns := length(unique(term)), by = family]
-predictions[, nproteins := length(unique(name)), by=family]
-
 # Listing genes that it was not able to find -----------------------------------
-missing_proteins <- unlist(lapply(out, "[[", "out"))
+
+# Relevant cases
+missing_proteins <- unique(xval$family)
+
+missing_proteins <- unlist(lapply(out[missing_proteins], "[[", "out"))
 missing_proteins <- missing_proteins[grepl("^In hasNode ", missing_proteins)]
-missing_proteins <- unique(gsub(".+\\sID[:]", "", missing_proteins))
+missing_proteins <- unique(gsub(".+\\sID[:]\\s*", "", missing_proteins))
+missing_proteins <- setdiff(
+  missing_proteins, 
+  xval[,tolower(unique(name))]
+)
 
 cbind(missing_proteins)
-#    missing_proteins   
-# [1,] " gper1_danre"     
-# [2,] " gper1_mouse"     
-# [3,] " fgfr1_human"     
-# [4,] " vgfr2_human"     
-# [5,] " vgfr4_danre"     
-# [6,] " lirb3_mouse"     
-# [7,] " p3c2g_mouse"     
-# [8,] " hp302_arath"     
-# [9,] " ddrb_caeel"      
-# [10,] " max2_caeel"      
-# [11,] " a0a0b4kgs4_drome"
-# [12,] " pk1_caeel"       
-# [13,] " utr7_arath"      
-# [14,] " urgt4_arath"     
-# [15,] " urgt1_arath"     
-# [16,] " gons1_arath"     
-# [17,] " g2ox4_arath"     
-# [18,] " g2ox6_arath"     
-# [19,] " a0a0b4jcy1_drome"
-# [20,] " t2r40_chick"     
-# [21,] " tgfr2_human"     
-# [22,] " acvr1_mouse"     
-# [23,] " acvl1_human"     
-# [24,] " bmr1a_mouse"     
-# [25,] " tgfr2_mouse"     
-# [26,] " svh2_caeel"      
-# [27,] " acvr1_human"     
-# [28,] " tgfr2_chick"     
-# [29,] " piwl1_mouse"     
-# [30,] " piwl2_mouse" 
+# missing_proteins  
+# [1,] "gper1_danre"     
+# [2,] "gper1_mouse"     
+# [3,] "lirb3_mouse"     
+# [4,] "hp302_arath"     
+# [5,] "svh2_caeel"      
+# [6,] "ddrb_caeel"      
+# [7,] "max2_caeel"      
+# [8,] "a0a0b4kgs4_drome"
+# [9,] "pk1_caeel"       
+# [10,] "utr7_arath"      
+# [11,] "urgt4_arath"     
+# [12,] "urgt1_arath"     
+# [13,] "gons1_arath"     
+# [14,] "g2ox4_arath"     
+# [15,] "g2ox6_arath"     
+# [16,] "a0a0b4jcy1_drome"
+# [17,] "t2r40_chick"
 
 # Retrieving the training data -------------------------------------------------
 
@@ -172,6 +134,10 @@ xval <- merge(
 xval <- xval[!is.na(value)]
 
 xval[, smallest := abs(score - value), by = .(term, name)]
+
+# Avaring out scores
+xval[, score := mean(score, na.rm = TRUE), by = .(term, name)]
+
 xval[, smallest := which.min(smallest), by = .(term, name)]
 xval[, within_id := 1:.N, by = .(term, name)]
 
@@ -235,7 +201,10 @@ legend(
   bty = "n"
   )
 
+# How much time?
+sum(annotations_predictions[, .SD[1], by = family]$elapsed)/60
 
+# Accuracy ---------------------------------------------------------------------
 auc_aphylo <- with(annotations_predictions, auc(score_aphylo, value, nc = 100000))
 auc_sifter <- with(annotations_predictions, auc(score, value, nc = 100000))
 

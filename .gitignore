@@ -4,3 +4,6 @@
 .Ruserdata
 sifter_db_pass.txt
 *.rds
+SIFTER-master/large_scale_v1.0/
+data/families_data/
+*.Rout

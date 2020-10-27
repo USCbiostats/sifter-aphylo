@@ -32,12 +32,17 @@ tmp <- tmp[!is.na(fami)]
 pli_data <- merge(
   x = dat,
   y = tmp, by.x = "UniProtKB", by.y = "number",
-  all.x = TRUE, all.y = FALSE, allow.cartesian = TRUE
+  all.x = TRUE,
+  all.y = FALSE,
+  # Extending, allowing proteins to show up in multiple families
+  allow.cartesian = TRUE
 )
 
 # Only those that matched a family
 pli_data <- pli_data[!is.na(fami)]
 saveRDS(pli_data, "data/families_data/annotations.rds")
+
+pli_data[qualifier == 1][,.(n = length(unique(go))),by=fami][n > 1]
 
 # Filtering the annotations:
 # - Have at least two functions per tree (in PFAM, we do that later), and
@@ -46,37 +51,11 @@ pli_data <- pli_data[qualifier == 1]
 
 unique(pli_data[,.(go,fami)])[, .(n=.N), by = fami][n>1]
 
-# For the family name, I will only keep the Panther name so that way
-# I make sure that 
-
-# Families
-# pfam_families <- readLines("data/families_data/annotations_families.txt")
-# pfam_families <- pfam_families[!grepl("^#", pfam_families)]
-# pli_data <- pli_data[fami %in% pfam_families]
-
-# # Copying the families' annotations from SIFTER's data
-# all_pfam <- list.files(
-#   "SIFTER-master/large_scale_v1.0/data/families_data/annotations/",
-#   full.names = TRUE,
-#   pattern    = "*.pli.gz"
-#   )
-# 
-# # Selecting files to copy
-# all_pfam <- data.table(path = all_pfam)
-# all_pfam[, file := gsub(".+//(?=PF[0-9]+\\.)", "", path, perl = TRUE)]
-# all_pfam[, file := gsub("\\..+", "", file)]
-# all_pfam <- all_pfam[file %in% pfam_families]
-# 
-# file.copy(
-#   all_pfam$path, to = "data/families_data/annotations/",
-#   overwrite = TRUE,
-#   copy.date = TRUE
-#   )
-# 
-# PF00001 <- xml2::read_xml("data/families_data/annotations/PF00001.pli")
-
 families_worth <- unique(pli_data[,.(go,fami)])[, .(n=.N), by = fami][n>1, fami]
 # 60 families
+
+# How many genes
+unique(pli_data[fami %in% families_worth, .(UniProtKB)]) # 472
 
 for (f in families_worth) {
   
