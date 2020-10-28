@@ -15,6 +15,24 @@ sum(sapply(out, function(o) {
 all_fams <- gsub("\\..+", "", list.files("data/families_data/annotations/"))
 all_fams[!all_fams %in% names(out)]
 
+# Looking at the pruned terms --------------------------------------------------
+go_terms_info <- fread("data-raw/go_terms_info.csv")
+sifter_log    <- readLines("data/families_data/predictions.Rout")
+sifter_log    <- sifter_log[grepl("^(Transition file|Pruned GO DAG)", sifter_log)]
+sifter_log    <- matrix(gsub(".+\\[|\\]", "", sifter_log), ncol = 2, byrow = TRUE)
+
+# Listing functions that we didn't find
+sifter_log    <- apply(sifter_log, 1, function(a) {
+  ans <- strsplit(a, ",")
+  setdiff(ans[[1]], ans[[2]])
+})
+
+# Preparing for checking
+sifter_log <- unique(unlist(sifter_log))
+sifter_log <- sprintf("GO:%07i", as.integer(sifter_log))
+
+go_terms_info[id %in% sifter_log, .(id, name, aspect)]
+
 # Was there any cross validation? ----------------------------------------------
 xval <- lapply(out, function(i) i$out[grepl("^x-val", i$out)])
 xval <- lapply(xval, function(i) {
@@ -57,8 +75,8 @@ xval <- xval[!is.na(score)]
 xval[, name:=gsub("/.+", "", `#Names`)]
 xval[, score := as.double(score)]
 
-xval[, nfuns := length(unique(term)), by = family]
-xval[, nproteins := length(unique(name)), by=family]
+xval[, nfuns_sifter     := length(unique(term)), by = family]
+xval[, nproteins_sifter := length(unique(name)), by = family]
 
 
 # What is under their metric? --------------------------------------------------
@@ -123,7 +141,7 @@ annotations <- unique(annotations[, fami := NULL]) # Don't need this
 
 # Since in some cases we have more than tree per protein (multiple hits in pfam)
 # we will keep the best
-xval <- xval[nfuns > 1 & nproteins > 1]
+xval <- xval[nfuns_sifter > 1 & nproteins_sifter > 1]
 xval <- merge(
   xval, 
   annotations[, .(term = go, name, value)],
@@ -137,6 +155,7 @@ xval[, smallest := abs(score - value), by = .(term, name)]
 
 # Avaring out scores
 xval[, score := mean(score, na.rm = TRUE), by = .(term, name)]
+setnames(xval, "score", "score_sifter")
 
 xval[, smallest := which.min(smallest), by = .(term, name)]
 xval[, within_id := 1:.N, by = .(term, name)]
@@ -146,19 +165,18 @@ xval[, c("smallest", "within_id", "value") := NULL]
 
 annotations_predictions <- merge(
   x = annotations, 
-  y = xval[nfuns > 1 & nproteins > 1],
+  y = xval[nfuns_sifter > 1 & nproteins_sifter > 1],
   by.x = c("name", "go"),
   by.y = c("name", "term"),
 )
-annotations_predictions
-
-# MAE
-with(annotations_predictions, mean((value - score)))
 
 # Versus aphylo
 aphylo_predictions <- data.table::fread("data-raw/predictions.csv.gz")
 aphylo_predictions[, name2 := gsub(".+=", "", name)]
 setnames(aphylo_predictions, "score", "score_aphylo")
+
+# Counting how many annotated
+aphylo_predictions[, nproteins_aphylo := length(unique(name)), by = .(term, panther)]
 
 annotations_predictions <- merge(
   x = annotations_predictions,
@@ -168,13 +186,42 @@ annotations_predictions <- merge(
   all.x = TRUE, all.y = FALSE
 )
 
-with(annotations_predictions, mean((value - score_aphylo)))
-
 set.seed(1231)
+
+graphics.off()
+pdf("data/families_data/predictions_assessment_difference_in_input.pdf", width = 6, height = 5)
+op <- par(mai = par("mai") * c(1,1,1,1))
+with(annotations_predictions[order(nproteins_aphylo - nproteins_sifter)], {
+  
+  plot(
+    x    = nproteins_aphylo - nproteins_sifter,
+    type = "h",
+    ylab = "aphylo - SIFTER",
+    xlab = paste("All", nrow(annotations_predictions), " annotations sorted by the difference"),
+    main = "Difference in the number of input proteins\nused for prediction"
+    )
+  
+  test <- t.test(nproteins_aphylo, nproteins_sifter, paired = TRUE, var.equal = FALSE)
+  
+  legend(
+    "bottomright",
+    title = "Paired t-test",
+    legend = c(
+      "\tH0: #aphylo - #SIFTER = 0",
+      sprintf("\tt-statistic: %.2f", test$statistic),
+      sprintf("\tp-value: %.4f", test$p.value)
+    ),
+    bty = "n"
+  )
+  
+  })
+par(op)
+dev.off()
+
 with(
   annotations_predictions,
   plot(
-    x    = jitter(score, amount = .05),
+    x    = jitter(score_sifter, amount = .05),
     y    = jitter(score_aphylo, amount = .05),
     xlim = c(0, 1.1),
     ylim = c(0, 1.1),
@@ -195,8 +242,8 @@ legend(
   legend = sprintf(
     "%s MAE: %.2f; AUC: %.2f",
     c("aphylo", "SIFTER"), 
-    with(annotations_predictions, c(mean(abs(value - score_aphylo)), mean(abs(value - score)))),
-    with(annotations_predictions, c(auc(score_aphylo,value)$auc, auc(score, value)$auc))
+    with(annotations_predictions, c(mean(abs(value - score_aphylo)), mean(abs(value - score_sifter)))),
+    with(annotations_predictions, c(auc(score_aphylo,value)$auc, auc(score_sifter, value)$auc))
     ),
   bty = "n"
   )
@@ -204,9 +251,24 @@ legend(
 # How much time?
 sum(annotations_predictions[, .SD[1], by = family]$elapsed)/60
 
+annotations_predictions[, name.x := NULL]
+annotations_predictions[, name.y := NULL]
+annotations_predictions[, elapsed := NULL]
+annotations_predictions[, nfuns := NULL]
+annotations_predictions[, nproteins := NULL]
+
+setnames(annotations_predictions, c("tree", "family", "#Names"), c("panther", "pfam", "name"))
+
+data.table::fwrite(
+  annotations_predictions,
+  "data/families_data/predictions_assessment.csv"
+  )
+
 # Accuracy ---------------------------------------------------------------------
 auc_aphylo <- with(annotations_predictions, auc(score_aphylo, value, nc = 100000))
-auc_sifter <- with(annotations_predictions, auc(score, value, nc = 100000))
+auc_sifter <- with(annotations_predictions, auc(score_sifter, value, nc = 100000))
+
+
 
 cols <- c("steelblue", "tomato")
 graphics.off()
@@ -220,7 +282,10 @@ legend(
     "%s AUC: %.2f; MAE: %.2f",
     c("aphylo", "SIFTER"),
     c(auc_aphylo$auc, auc_sifter$auc),
-    with(annotations_predictions, c(mean(abs(value - score_aphylo)), mean(abs(value - score))))
+    with(annotations_predictions, c(
+      mean(abs(value - score_aphylo)),
+      mean(abs(value - score_sifter)))
+      )
     ),
   col = cols,
   bty = "n",
