@@ -3,7 +3,7 @@ library(data.table)
 library(pfamscanr)
 
 # Loading the trees for the experiment
-candidate_trees <- readRDS("data-raw/candidate_trees.rds")
+candidate_trees <- readRDS("data-raw/candidate_trees_3.rds")
 
 # Extracting database with annotations per tree
 dat <- lapply(candidate_trees, function(tree) {
@@ -31,7 +31,7 @@ pfam_ids <- get_info_uniprot(pfam_ids)
 # names(pfam_ids)[c(259, 642)]
 # [1] "F1QJU1"     "A0A0R4ITP9"
 
-save.image("data/aphylo_families_entries.rda")
+save.image("data/aphylo_families_entries_3.rda")
 
 # Setting up the data to be used with SIFTER -----------------------------------
 
