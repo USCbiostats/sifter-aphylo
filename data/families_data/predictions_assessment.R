@@ -146,6 +146,11 @@ for (a in seq_along(analysis)) {
 
 }
 
+#' trunc1 took 110.704216666667 minutes.
+#' Number of columns for PF00754 doesn't match the read.
+#' trunc3 took 199.940383333333 minutes.
+#' Number of columns for PF00754 doesn't match the read
+
 # Checking which families
 families_analyzed <- lapply(analysis_data, "[[", "xval")
 families_analyzed <- lapply(families_analyzed, "[[", "family")
@@ -354,5 +359,7 @@ legend(
   bty = "n"
   )
 dev.off()
+
+
 # 6/10 not annotations that were annotated with not now have a non-zero annotation
 # 
