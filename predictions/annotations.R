@@ -40,7 +40,7 @@ pli_data <- merge(
 
 # Only those that matched a family
 pli_data <- pli_data[!is.na(fami)]
-saveRDS(pli_data, "data/families_data/annotations.rds")
+saveRDS(pli_data, "predictions/annotations.rds")
 
 pli_data[qualifier == 1][,.(n = length(unique(go))),by=fami][n > 1]
 
@@ -66,7 +66,7 @@ for (f in families_worth) {
     protein_number = as.character(pli_data[fami == f, UniProtKB]),
     go_number      = gsub("GO:","",as.character(pli_data[fami == f, go])),
     moc            = "EXP",
-    file = sprintf("data/families_data/annotations/%s.pli", f)
+    file = sprintf("predictions/annotations/%s.pli", f)
   )
   
   message("Family ", f, " done.")

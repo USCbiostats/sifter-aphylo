@@ -1,7 +1,7 @@
 #' Runs SIFTER
 sifter_java <- function(
   fam,
-  fam_data  = "SIFTER-master/large_scale_v1.0/data/families_data",
+  fam_data  = "SIFTER-master/large_scale_v1.0/predictions",
   fn_tree   = sprintf("%s/reconciled_trees/%s_reconciled.xml", fam_data, fam),
   fn_ann    = sprintf("%s/annotations/%s.pli", fam_data, fam),
   fn_sifter = "/home/vegayon@PREVMED.USC.EDU/sifter-aphylo/SIFTER-master/core/sifter2.1.1.jar",
@@ -205,13 +205,13 @@ sifter_java <- function(
 
 # Running sifter ---------------------------------------------------------------
 
-families <- list.files("data/families_data/annotations/", pattern = "*pli")
+families <- list.files("predictions/annotations/", pattern = "*pli")
 families <- gsub("\\..+", "", families)
 
 # Cross validation predictions
 parallel::mclapply(families, function(f) {
   
-  fn_out <- sprintf("data/families_data/prediction_bis/%s-xval.rds", f)
+  fn_out <- sprintf("predictions/prediction_bis/%s-xval.rds", f)
   if (file.exists(fn_out)) {
     message("Family ", f, " already processed.")
     return(NULL)
@@ -219,11 +219,11 @@ parallel::mclapply(families, function(f) {
   
   tmp_ans <- sifter_java(
     fam         = f,
-    fam_data    = "data/families_data/",
-    fn_tree     = sprintf("SIFTER-master/large_scale_v1.0/data/families_data/reconciled_trees/%s_reconciled.xml", f),
-    fn_ann      = sprintf("data/families_data/annotations/%s.pli", f),
+    fam_data    = "predictions/",
+    fn_tree     = sprintf("SIFTER-master/large_scale_v1.0/predictions/reconciled_trees/%s_reconciled.xml", f),
+    fn_ann      = sprintf("predictions/annotations/%s.pli", f),
     sifter_args = "--truncation 3 --xvalidation --folds 0",
-    out_dir     = sprintf("data/families_data/prediction_bis/%s-xval", f) 
+    out_dir     = sprintf("predictions/prediction_bis/%s-xval", f) 
   )
   
   # Saving

@@ -99,7 +99,7 @@ for (f in unique(pli_data$tree)) {
 
 sifter_java <- function(
   fam,
-  fam_data = "SIFTER-master/large_scale_v1.0/data/families_data",
+  fam_data = "SIFTER-master/large_scale_v1.0/predictions",
   fn_tree  = sprintf("%s/reconciled_trees/%s_reconciled.xml", fam_data, fam),
   fn_ann   = sprintf("%s/annotations/%s.pli", fam_data, fam),
   fn_sifter = "/home/vegayon@PREVMED.USC.EDU/sifter-aphylo/SIFTER-master/core/sifter2.1.1.jar",

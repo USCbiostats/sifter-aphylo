@@ -1,5 +1,5 @@
 # Listing missing families
-x <- readLines("data/families_data/predictions.Rout")
+x <- readLines("predictions/predictions.Rout")
 x <- x[grepl("simpleError.+No such file", x)]
 x <- unique(gsub(".+_trees/|_reconciled\\.xml\\.gz>$", "",x))
 

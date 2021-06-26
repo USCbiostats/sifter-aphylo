@@ -2,8 +2,8 @@ library(data.table)
 library(aphylo)
 
 analysis <- c(
-  trunc1 = "data/families_data/predictions/",
-  trunc3 = "data/families_data/predictions_bis/"
+  trunc1 = "predictions/predictions/",
+  trunc3 = "predictions/predictions_bis/"
   )
 
 analysis_data <- structure(vector(mode = "list", 2), names = names(analysis))
@@ -20,12 +20,12 @@ for (a in seq_along(analysis)) {
   }))/60, " minutes.")
   
   # How many were missed?
-  all_fams <- gsub("\\..+", "", list.files("data/families_data/annotations/"))
+  all_fams <- gsub("\\..+", "", list.files("predictions/annotations/"))
   all_fams[!all_fams %in% names(out)]
   
   # Looking at the pruned terms --------------------------------------------------
   go_terms_info <- fread("data-raw/go_terms_info.csv")
-  sifter_log    <- readLines("data/families_data/predictions.Rout")
+  sifter_log    <- readLines("predictions/predictions.Rout")
   sifter_log    <- sifter_log[grepl("^(Transition file|Pruned GO DAG)", sifter_log)]
   sifter_log    <- matrix(gsub(".+\\[|\\]", "", sifter_log), ncol = 2, byrow = TRUE)
   
@@ -164,7 +164,7 @@ with(families_analyzed, trunc3[which(!trunc3 %in% trunc1)])
 
 # Retrieving the training data -------------------------------------------------
 
-annotations <- readRDS("data/families_data/annotations.rds")
+annotations <- readRDS("predictions/annotations.rds")
 setnames(annotations, "qualifier", "value")
 annotations <- unique(annotations[, fami := NULL]) # Don't need this
 
@@ -248,7 +248,7 @@ annotations_predictions <- merge(
 set.seed(1231)
 
 graphics.off()
-pdf("data/families_data/predictions_assessment_difference_in_input.pdf", width = 6, height = 5)
+pdf("predictions/predictions_assessment_difference_in_input.pdf", width = 6, height = 5)
 op <- par(mai = par("mai") * c(1,1,1,1))
 with(annotations_predictions[order(nproteins_aphylo - nproteins_trunc1)], {
   
@@ -285,7 +285,7 @@ setnames(annotations_predictions, c("tree", "family", "#Names"), c("panther", "p
 
 data.table::fwrite(
   annotations_predictions,
-  "data/families_data/predictions_assessment.csv"
+  "predictions/predictions_assessment.csv"
   )
 
 # Accuracy ---------------------------------------------------------------------
@@ -295,7 +295,7 @@ auc_trunc3 <- with(annotations_predictions, auc(score_trunc3, value, nc = 100000
 
 cols <- c("black", "steelblue", "tomato")
 graphics.off()
-pdf("data/families_data/predictions_assessment.pdf", width = 7, height = 6)
+pdf("predictions/predictions_assessment.pdf", width = 7, height = 6)
 plot(auc_aphylo, lty = 1, lwd = 2, col = cols[1])
 with(auc_trunc1, lines(x = fpr, y = tpr, lty = 2, lwd = 2, col = cols[2]))
 with(auc_trunc3, lines(x = fpr, y = tpr, lty = 4, lwd = 2, col = cols[3]))
@@ -323,7 +323,7 @@ dev.off()
 
 # Why SIFTER trunc level 3 does better in MAE but not in AUC? ------------------
 graphics.off()
-pdf("data/families_data/predictions_assessment_sifter_t1_vs_t3.pdf", width = 5, height = 5)
+pdf("predictions/predictions_assessment_sifter_t1_vs_t3.pdf", width = 5, height = 5)
 set.seed(123123);annotations_predictions[order(-value, score_trunc3),][, {
   
   xcoords <- jitter(score_trunc1, amount = 0.1)

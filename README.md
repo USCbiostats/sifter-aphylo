@@ -4,6 +4,15 @@
 This repository contains the code used to make predictions with SIFTER using
 the same phylogenetic trees and GO annotations featured in the aphylo paper.
 
+**The relevant data** featured in the paper:
+
+Vega Yon GG, Thomas DC, Morrison J, Mi H, Thomas PD, et al. (2021) Bayesian parameter estimation for automatic annotation of gene functions using observational data and phylogenetic trees. PLOS Computational Biology 17(2): e1007948. https://doi.org/10.1371/journal.pcbi.1007948
+
+Can be found at
+
+[`predictions`](predictions/)
+
+
 ## Downloads
 
 The sifter program was downloaded from the GitHub repository [here](https://github.com/BrennerLab/SIFTER/tree/8274cac492a1c7355c4d92df548d6997dbb6b4b1).
